@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://danielh-official.github.io/sitemap.xml
+
+# Disallow admin or private areas (if any)
+Disallow: /assets/build/
+Disallow: /404/
