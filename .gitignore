@@ -1,0 +1,6 @@
+# /build_*/
+/build_local/
+/node_modules/
+/source/assets/build/
+/vendor/
+.DS_Store
