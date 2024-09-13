@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://danielhaven.dev',
+    'baseUrl' => '',
     'production' => true,
 ];
