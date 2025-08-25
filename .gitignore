@@ -1,5 +1,6 @@
 # Build directories (handled by GitHub Actions)
 /build_local/
+/build_production/
 
 # Dependencies
 /node_modules/
