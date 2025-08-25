@@ -1,6 +1,6 @@
 window.axios = require('axios');
-import Alpine from "alpinejs";
-import Fuse from "fuse.js";
+import Alpine from 'alpinejs';
+import Fuse from 'fuse.js';
 
 window.Fuse = Fuse;
 window.Alpine = Alpine;
@@ -20,7 +20,6 @@ hljs.registerLanguage('php', require('highlight.js/lib/languages/php'));
 hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
 hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'));
 
-document.querySelectorAll('pre code').forEach((block) => {
-    hljs.highlightElement(block);
+document.querySelectorAll('pre code').forEach(block => {
+  hljs.highlightElement(block);
 });
-

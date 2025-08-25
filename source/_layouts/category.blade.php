@@ -1,19 +1,29 @@
 @extends('_layouts.main')
 
 @section('body')
-    <h1>{{ $page->title }}</h1>
+@php
+  $breadcrumbs = [
+      ['title' => 'Home', 'url' => '/', 'active' => false],
+      ['title' => 'Blog', 'url' => '/blog', 'active' => false],
+      ['title' => $page->title, 'url' => $page->getUrl(), 'active' => true],
+  ];
+@endphp
 
-    <div class="text-2xl border-b border-blue-200 mb-6 pb-10">
-        @yield('content')
-    </div>
+<x-breadcrumbs :items="$breadcrumbs" />
 
-    @foreach ($page->posts($posts) as $post)
-        @include('_components.post-preview-inline')
+<h1 class="mb-6 text-4xl font-bold">{{ $page->title }}</h1>
 
-        @if (! $loop->last)
-            <hr class="w-full border-b mt-2 mb-6">
-        @endif
-    @endforeach
+<div class="mb-6 border-b border-blue-200 pb-10 text-2xl">
+  @yield('content')
+</div>
 
-    @include('_components.newsletter-signup')
+@foreach ($page->posts($posts) as $post)
+  @include('_components.post-preview-inline')
+
+  @if (! $loop->last)
+    <hr class="mb-6 mt-2 w-full border-b" />
+  @endif
+@endforeach
+
+@include('_components.newsletter-signup')
 @stop

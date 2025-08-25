@@ -5,8 +5,8 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Daniel Haven',
-    'siteDescription' => 'Laravel/PHP Developer and Occassional Blogger',
+    'siteName' => 'danielhaven.dev',
+    'siteDescription' => 'Daniel Haven\'s Developer Site',
     'siteAuthor' => 'Daniel Haven',
 
     // collections
@@ -54,10 +54,14 @@ return [
         }
 
         return strlen($cleaned) > $length
-            ? preg_replace('/\s+?(\S+)?$/', '', $truncated) . '...'
+            ? preg_replace('/\s+?(\S+)?$/', '', $truncated).'...'
             : $cleaned;
     },
     'isActive' => function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
+    'createBreadcrumbs' => function ($items) {
+        return $items;
+    },
+
 ];

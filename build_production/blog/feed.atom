@@ -1,29 +1,31 @@
 <?xml version="1.0"?>
+
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Daniel Haven</title>
-    <link href="/blog" />
-    <link type="application/atom+xml" rel="self" href="/blog/feed.atom" />
-    <updated>2024-09-13T20:08:58+00:00</updated>
-    <id>/blog/feed.atom</id>
-    <author>
-        <name>Daniel Haven</name>
-    </author>
-                <entry>
-    <id>/blog/my-first-blog-post</id>
-    <link type="text/html" rel="alternate" href="/blog/my-first-blog-post" />
-    <title>My First Blog Post</title>
-    <published>2024-09-13T00:00:00+00:00</published>
-    <updated>2024-09-13T00:00:00+00:00</updated>
-    <author>
-        <name>Daniel Haven</name>
-    </author>
-    <summary type="html">Nothing to see here.
+  <title>danielhaven.dev</title>
+  <link href="https://danielh-official.github.io/blog" />
+  <link type="application/atom+xml" rel="self" href="https://danielh-official.github.io/blog/feed.atom" />
+  <updated>2025-08-25T19:12:56+00:00</updated>
+  <id>https://danielh-official.github.io/blog/feed.atom</id>
+  <author>
+    <name>Daniel Haven</name>
+  </author>
+              <entry>
+  <id>https://danielh-official.github.io/blog/my-first-blog-post</id>
+  <link type="text/html" rel="alternate" href="https://danielh-official.github.io/blog/my-first-blog-post" />
+  <title>My First Blog Post</title>
+  <published>2024-09-13T00:00:00+00:00</published>
+  <updated>2024-09-13T00:00:00+00:00</updated>
+  <author>
+    <name>Daniel Haven</name>
+  </author>
+  <summary type="html">Nothing to see here.
 
 This site was built using Tighten&#039;s Jigsaw....</summary>
-    <content type="html"><![CDATA[
-        <p>Nothing to see here.</p>
+  <content type="html">
+    <![CDATA[ <p>Nothing to see here.</p>
 
 <p>This site was built using Tighten's <a href="https://jigsaw.tighten.com" target="_blank">Jigsaw</a>.</p>
-    ]]></content>
+ ]]>
+  </content>
 </entry>
     </feed>
