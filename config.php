@@ -3,8 +3,8 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
-    'production' => false,
+    'baseUrl' => 'https://danielh-official.github.io',
+    'production' => true,
     'siteName' => 'danielhaven.dev',
     'siteDescription' => 'Daniel Haven\'s Developer Site',
     'siteAuthor' => 'Daniel Haven',
