@@ -1,5 +1,4 @@
 # Build directories (handled by GitHub Actions)
-/build_*/
 /build_local/
 
 # Dependencies
