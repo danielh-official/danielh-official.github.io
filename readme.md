@@ -1,6 +1,6 @@
 # Daniel Haven - Developer Website
 
-Personal website and blog built with Jigsaw, featuring Laravel/PHP development content and modern web technologies.
+Developer blog website built with Jigsaw.
 
 ## 🛠️ Development
 
@@ -10,8 +10,14 @@ Personal website and blog built with Jigsaw, featuring Laravel/PHP development c
 composer install
 npm install
 
+# Start development server
+npm run dev
+
 # Build for local development
-npm run build:local
+npm run build
+
+# Build for production
+npm run build:prod
 
 # Format code
 npm run format
@@ -24,28 +30,41 @@ npm run format
 - **Components**: Located in `source/_components/`
 - **Layouts**: Located in `source/_layouts/`
 
+## 🚀 Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions:
+
+- **Trigger**: Push to `main` branch
+- **Build**: PHP 8.2 + Node.js 18
+- **Deploy**: GitHub Pages via Actions
+- **URL**: https://danielh-official.github.io/
+
 ## 🔧 Configuration
 
 Key configuration is in `config.php`:
 - Site metadata
 - Collections (posts, categories)
 - Helper functions
-- Environment-specific settings
+- SEO settings
 
-## 🎨 Styling
+## 🎨 Styling & Code Quality
 
 - **Tailwind CSS**: Utility-first CSS framework
 - **Custom Components**: Reusable Blade components
 - **Responsive Design**: Mobile-first approach
+- **Code Formatting**: Pint (PHP) + Prettier (Blade/Tailwind)
+- **Linting**: Automated code quality checks
 
 ## 📊 SEO Features
 
-- Meta tags and Open Graph
-- Structured data (Schema.org)
-- Sitemap generation
-- Breadcrumb navigation
-- Canonical URLs
-- Social media optimization
+- **Meta Tags**: Title, description, Open Graph, Twitter Cards
+- **Structured Data**: Schema.org Person and BlogPosting markup
+- **Sitemap**: Auto-generated XML sitemap
+- **Robots.txt**: Search engine directives
+- **Breadcrumbs**: Navigation breadcrumbs
+- **Canonical URLs**: Prevent duplicate content
+- **Social Media**: Optimized for sharing
+- **Google Search Console**: Ready for verification
 
 ## 📄 License
 
