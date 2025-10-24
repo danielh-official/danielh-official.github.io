@@ -93,4 +93,24 @@
       @endif
     </div>
   </nav>
+
+  @if ((bool) $page->giscusCommentsDiscussionNumber)
+    <div class="mt-10">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="danielh-official/danielh-official.github.io"
+        data-repo-id="R_kgDOMw_n_w"
+        data-mapping="number"
+        data-term="{{ $page->giscusCommentsDiscussionNumber }}"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
+  @endif
 @endsection

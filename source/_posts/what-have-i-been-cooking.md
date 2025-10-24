@@ -4,6 +4,7 @@ section: content
 title: What Have I Been Cooking?
 date: 2025-10-24
 description: What I've been focusing on in software development.
+giscusCommentsDiscussionNumber: 5
 ---
 
 ## Chrome Extensions
