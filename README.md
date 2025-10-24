@@ -44,27 +44,6 @@ This site is automatically deployed to GitHub Pages using GitHub Actions:
 Key configuration is in `config.php`:
 - Site metadata
 - Collections (posts, categories)
-- Helper functions
-- SEO settings
-
-## 🎨 Styling & Code Quality
-
-- **Tailwind CSS**: Utility-first CSS framework
-- **Custom Components**: Reusable Blade components
-- **Responsive Design**: Mobile-first approach
-- **Code Formatting**: Pint (PHP) + Prettier (Blade/Tailwind)
-- **Linting**: Automated code quality checks
-
-## 📊 SEO Features
-
-- **Meta Tags**: Title, description, Open Graph, Twitter Cards
-- **Structured Data**: Schema.org Person and BlogPosting markup
-- **Sitemap**: Auto-generated XML sitemap
-- **Robots.txt**: Search engine directives
-- **Breadcrumbs**: Navigation breadcrumbs
-- **Canonical URLs**: Prevent duplicate content
-- **Social Media**: Optimized for sharing
-- **Google Search Console**: Ready for verification
 
 ## 📄 License
 
