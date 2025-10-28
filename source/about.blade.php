@@ -93,6 +93,12 @@ description: Learn more about Daniel Haven, a software developer specializing in
   <li><a href="https://pinkary.com/@danielhaven" target="_blank">Pinkary</a></li>
 </ul>
 
+<div>
+  This site is built using Tigthen Jigsaw. See the
+  <a target="_blank" href="https://github.com/danielh-official/danielh-official.github.io">GitHub repository</a>
+  for more details.
+</div>
+
 <x-project-listing :projects="$publishedProjects" title="Published Projects" />
 
 <x-project-listing :projects="$ongoingProjects" title="Ongoing Projects" />
