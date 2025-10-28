@@ -19,9 +19,9 @@
     <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2" />
   @endif
 
-  <h1 class="mb-2 leading-none">{{ $page->title }}</h1>
+  <h1 class="mb-2 leading-none dark:text-gray-300">{{ $page->title }}</h1>
 
-  <p class="text-xl text-gray-700 md:mt-0">
+  <p class="text-xl text-gray-700 md:mt-0 dark:text-gray-300">
     {{ $page->author }} • {{ date('F j, Y', $page->date) }}
     @php
       $wordCount = str_word_count(strip_tags($page->getContent()));
@@ -36,7 +36,7 @@
       <a
         href="{{ '/blog/categories/'.$category }}"
         title="View posts in {{ $category }}"
-        class="mr-4 inline-block rounded bg-gray-300 px-3 pt-px text-xs font-semibold uppercase leading-loose tracking-wide text-gray-800 hover:bg-blue-200"
+        class="mr-4 inline-block rounded bg-gray-300 px-3 pt-px text-xs font-semibold uppercase leading-loose tracking-wide hover:bg-blue-200"
       >
         {{ $category }}
       </a>

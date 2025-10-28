@@ -70,7 +70,7 @@ description: Learn more about Daniel Haven, a software developer specializing in
 
 <x-breadcrumbs :items="$breadcrumbs" />
 
-<h1 class="mb-6 text-4xl font-bold">About Daniel Haven</h1>
+<h1 class="mb-6 text-4xl font-bold dark:text-gray-300">About Daniel Haven</h1>
 
 <hr class="my-6 border-b" />
 

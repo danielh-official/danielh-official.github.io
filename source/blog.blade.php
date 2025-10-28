@@ -18,7 +18,7 @@ pagination:
 
 <x-breadcrumbs :items="$breadcrumbs" />
 
-<h1 class="mb-6 text-4xl font-bold">Blog</h1>
+<h1 class="mb-6 text-4xl font-bold dark:text-gray-300">Blog</h1>
 
 <hr class="my-6 border-b" />
 

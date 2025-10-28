@@ -16,11 +16,7 @@
     </p>
 
     <h2 class="mt-0 text-3xl">
-      <a
-        href="{{ $featuredPost->getPath() }}"
-        title="Read {{ $featuredPost->title }}"
-        class="font-extrabold text-gray-900"
-      >
+      <a href="{{ $featuredPost->getPath() }}" title="Read {{ $featuredPost->title }}" class="font-extrabold">
         {{ $featuredPost->title }}
       </a>
     </h2>

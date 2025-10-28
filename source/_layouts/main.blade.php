@@ -47,8 +47,10 @@
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}" />
   </head>
 
-  <body class="flex min-h-screen flex-col justify-between bg-gray-100 font-sans leading-normal text-gray-800">
-    <header class="flex h-24 items-center border-b bg-white py-4 shadow" role="banner">
+  <body
+    class="flex min-h-screen flex-col justify-between bg-gray-100 font-sans leading-normal text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+  >
+    <header class="flex h-24 items-center border-b py-4 shadow" role="banner">
       <div class="container mx-auto flex max-w-8xl items-center px-4 lg:px-8">
         <div class="flex items-center">
           <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
@@ -76,10 +78,9 @@
       @yield('body')
     </main>
 
-    <footer class="mt-12 bg-white py-4 text-center text-sm" role="contentinfo">
+    <footer class="mt-12 py-4 text-center text-sm" role="contentinfo">
       <ul class="flex list-none flex-col justify-center md:flex-row">
         <li class="md:mr-2">
-          {{-- &copy; <a href="https://tighten.co" title="Tighten website">Tighten</a> {{ date('Y') }}. --}}
           &copy;
           <a href="https://github.com/danielh-official" title="Daniel Haven's GitHub profile">Daniel Haven</a>
           {{ date('Y') }}.

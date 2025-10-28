@@ -16,7 +16,7 @@
           @endif
 
           @if ($item['active'] ?? false)
-            <span class="font-medium text-gray-800" aria-current="page">{{ $item['title'] }}</span>
+            <span class="font-medium text-gray-800 dark:text-gray-500" aria-current="page">{{ $item['title'] }}</span>
           @else
             <a
               href="{{ $item['url'] }}"

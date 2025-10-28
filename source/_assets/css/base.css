@@ -16,6 +16,7 @@ blockquote {
   @apply font-normal;
   @apply italic;
   @apply text-gray-800;
+  @apply dark:text-gray-300;
   @apply border-l-4;
   @apply border-blue-400;
 }
@@ -50,6 +51,7 @@ h6 {
   @apply mb-4;
   @apply text-gray-900;
   @apply leading-tight;
+  @apply dark:text-gray-200;
 
   &:first-child {
     @apply mt-0;

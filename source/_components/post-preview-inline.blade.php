@@ -1,10 +1,10 @@
 <div class="mb-4 flex flex-col">
-  <p class="my-2 font-medium text-gray-700">
+  <p class="my-2 font-medium">
     {{ $post->getDate()->format('F j, Y') }}
   </p>
 
   <h2 class="mt-0 text-3xl">
-    <a href="{{ $post->getPath() }}" title="Read more - {{ $post->title }}" class="font-extrabold text-gray-900">
+    <a href="{{ $post->getPath() }}" title="Read more - {{ $post->title }}" class="font-extrabold">
       {{ $post->title }}
     </a>
   </h2>
