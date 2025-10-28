@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Local Mutelist For x.com (Formerly Twitter)
 date: 2025-10-16
+order: 0
 ---
 
 I made a [chrome extension](https://chromewebstore.google.com/detail/local-xcom-twitter-muteli/epgpnmkhgjnhhammgaaencaconefiokp?hl=en&authuser=0) for hiding specific people's posts on x.com.

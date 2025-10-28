@@ -13,7 +13,7 @@ return [
     'collections' => [
         'posts' => [
             'author' => 'Daniel Haven', // Default author, if not provided in a post
-            'sort' => '-date',
+            'sort' => ['-date', '-order'],
             'path' => 'blog/{filename}',
         ],
         'categories' => [

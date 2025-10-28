@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Finished Next.js Widgets App yesterday
 date: 2025-10-28
+order: 0
 ---
 
 Finished widgets CRUD yesterday.
