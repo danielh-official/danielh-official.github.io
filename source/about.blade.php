@@ -46,6 +46,18 @@ description: Learn more about Daniel Haven, a software developer specializing in
           'type' => 'ongoing',
       ],
       [
+          'name' => 'Next.js Widgets',
+          'description' => 'A Next.js based dashboard for creating and managing widgets; written in Next.js/Typescript.',
+          'links' => [
+              ['title' => 'GitHub Repository', 'url' => 'https://github.com/danielh-official/next-js-widgets'],
+              [
+                  'title' => 'Live Demo',
+                  'url' => 'https://next-js-widgets.vercel.app/',
+              ],
+          ],
+          'type' => 'portfolio',
+      ],
+      [
           'name' => 'Simple Funding Site',
           'description' => 'Written in Laravel with React as the frontend and Inertia as the glue that holds backend and frontend together.',
           'links' => [
