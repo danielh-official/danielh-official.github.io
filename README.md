@@ -13,6 +13,9 @@ npm install
 # Start development server
 npm run dev
 
+# Start development server with watch
+npm run watch
+
 # Build for local development
 npm run build
 
