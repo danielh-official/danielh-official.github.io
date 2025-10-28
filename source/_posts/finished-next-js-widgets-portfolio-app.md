@@ -9,4 +9,4 @@ Finished widgets CRUD yesterday.
 
 Built on Next.js and published to Vercel on the Hobby plan.
 
-See https://github.com/danielh-official/next-js-widgets for more details.
+See [https://github.com/danielh-official/next-js-widgets](https://github.com/danielh-official/next-js-widgets) for more details.
