@@ -20,6 +20,10 @@ pagination:
 
 <h1 class="mb-6 text-4xl font-bold dark:text-gray-300">Blog</h1>
 
+<a target="_blank" href="/blog/feed.atom" class="mb-6 inline-block text-blue-600 hover:underline">
+  Subscribe to RSS Feed
+</a>
+
 <hr class="my-6 border-b" />
 
 @foreach ($pagination->items as $post)
