@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: My First Blog Post
-date: 2024-9-13
+date: 2024-09-13
 description: This is my first blog post.
 ---
 
