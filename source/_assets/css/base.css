@@ -27,6 +27,7 @@ code {
   @apply text-sm;
   @apply bg-gray-300;
   @apply rounded;
+  @apply dark:bg-gray-700;
 }
 
 code.hljs {
@@ -39,6 +40,13 @@ code.hljs {
     @apply font-normal;
     @apply not-italic;
   }
+
+  @apply dark:text-gray-300;
+}
+
+code.language-csharp {
+  @apply text-gray-800;
+  @apply dark:text-gray-300;
 }
 
 h1,
@@ -133,6 +141,7 @@ pre {
   @apply rounded;
   @apply shadow;
   @apply overflow-x-auto;
+  @apply dark:bg-gray-800;
 
   & code {
     @apply block;
