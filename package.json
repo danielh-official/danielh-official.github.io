@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "serve": "./vendor/bin/jigsaw serve",
     "dev": "mix",
     "watch": "mix watch",
     "prod": "mix --production",
