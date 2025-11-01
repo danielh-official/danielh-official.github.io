@@ -16,9 +16,9 @@ description: Learn more about Daniel Haven, a software developer specializing in
           'name' => 'Local X.com (Formerly Twitter) Mutelist',
           'description' => 'A Chrome extension for hiding users on x.com; written in React/Typescript.',
           'links' => [
-              ['title' => 'Chrome Web Store', 'url' => 'https://chromewebstore.google.com/detail/local-xcom-twitter-muteli/epgpnmkhgjnhhammgaaencaconefiokp'],
+              ['title' => 'GitHub Repository', 'url' => 'https://github.com/danielh-official/local-x-mutelist'],
           ],
-          'type' => 'published',
+          'type' => 'portfolio',
       ],
       [
           'name' => 'Save To Play',
