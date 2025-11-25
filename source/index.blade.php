@@ -1,60 +1,60 @@
 @extends('_layouts.main')
 
+@php
+  function generateGitHubReadMeMostUsedLanguagesLink(): string
+  {
+      $query = [
+          'username' => 'danielh-official',
+          'layout' => 'pie',
+          'theme' => 'transparent',
+          'custom_title' => 'Current most used languages',
+      ];
+
+      $queryParams = http_build_query($query);
+
+      return "https://danielh-official-github-readme-stat.vercel.app/api/top-langs/?$queryParams";
+  }
+@endphp
+
 @section('body')
-<div class="text-center text-5xl">Recent Blog Posts</div>
-
-<hr />
-
-@foreach ($posts->where('featured', true) as $featuredPost)
-  <div class="mb-6 w-full">
-    @if ($featuredPost->cover_image)
-      <img src="{{ $featuredPost->cover_image }}" alt="{{ $featuredPost->title }} cover image" class="mb-6" />
-    @endif
-
-    <p class="my-2 font-medium text-gray-700">
-      {{ $featuredPost->getDate()->format('F j, Y') }}
-    </p>
-
-    <h2 class="mt-0 text-3xl">
-      <a href="{{ $featuredPost->getPath() }}" title="Read {{ $featuredPost->title }}" class="font-extrabold">
-        {{ $featuredPost->title }}
-      </a>
-    </h2>
-
-    <p class="mb-4 mt-0">{!! $featuredPost->getExcerpt() !!}</p>
-
-    <a
-      href="{{ $featuredPost->getPath() }}"
-      title="Read - {{ $featuredPost->title }}"
-      class="mb-4 uppercase tracking-wide"
-    >
-      Read
-    </a>
-  </div>
-
-  @if (! $loop->last)
-    <hr class="my-6 border-b" />
-  @endif
-@endforeach
-
-{{-- @include('_components.newsletter-signup') --}}
-
-@foreach ($posts->where('featured', false)->take(6)->chunk(2) as $row)
-  <div class="flex flex-col md:-mx-6 md:flex-row">
-    @foreach ($row as $post)
-      <div class="w-full md:mx-6 md:w-1/2">
-        @include('_components.post-preview-inline')
-      </div>
-
-      @if (! $loop->last)
-        <hr class="mb-6 mt-2 block w-full border-b md:hidden" />
-      @endif
-    @endforeach
-  </div>
-
-  @if (! $loop->last)
-    <hr class="mb-6 mt-2 w-full border-b" />
-  @endif
-@endforeach
-
+<div>
+  <img
+    src="/assets/img/about.png"
+    alt="My photo"
+    class="mx-auto flex aspect-square h-64 w-64 rounded-3xl bg-contain shadow-sm shadow-gray-900/50 md:float-right md:ml-10"
+  />
+</div>
+<div>
+  <div class="text-center text-5xl">Daniel Haven</div>
+  <p class="mt-4 text-center text-xl">
+    Software Engineer and
+    <span class="line-through">Coffee</span>
+    Tea Enthusiast
+  </p>
+  <p class="mt-16 text-4xl">whoami</p>
+  <p>
+    I'm an active open-source contributor and go by
+    <a href="https://github.com/danielh-official" target="_blank">danielh-official</a>
+    on GitHub.
+  </p>
+  <p>My passion lies in solving a variety of problems, mainly within web and app development.</p>
+</div>
+<div>
+  <p>
+    For full stack web development, my home is @
+    <a href="https://laravel.com/" target="_blank" class="text-red-500">LaravelPHP</a>
+    , with a variety of frontends (e.g., vanilla, vue, react, svelte, etc.) if Livewire is not on the table. I am also
+    open to exploring other backend, full-stack, etc. technologies as needed (e.g., ruby on rails, asp.net, etc.).
+  </p>
+</div>
+<div class="ml-6 mt-6">
+  <img src="{{ generateGitHubReadMeMostUsedLanguagesLink() }}" alt="github stats - most used languages" />
+</div>
+<div>
+  <p>
+    As an Apple product owner, I've also been experimenting with developing iOS apps in Swift. My latest project can be
+    download @
+    <a href="https://streaksforynab.app/" target="_blank">streaksforynab.app</a>
+  </p>
+</div>
 @stop

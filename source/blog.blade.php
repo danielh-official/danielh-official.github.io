@@ -24,15 +24,11 @@ pagination:
   Subscribe to RSS Feed
 </a>
 
-<hr class="my-6 border-b" />
-
-@foreach ($pagination->items as $post)
-  @include('_components.post-preview-inline')
-
-  @if ($post != $pagination->items->last())
-    <hr class="my-6 border-b" />
-  @endif
-@endforeach
+<div class="grid gap-8 md:grid-cols-2">
+  @foreach ($pagination->items as $post)
+    @include('_components.post-preview-inline')
+  @endforeach
+</div>
 
 @if ($pagination->pages->count() > 1)
   <nav class="my-8 flex">
