@@ -6,4 +6,12 @@
   >
     Blog
   </a>
+
+  <a
+    title="{{ $page->siteName }} Resume"
+    href="/resume"
+    class="{{ $page->isActive('/resume') ? 'active text-blue-800' : '' }} ml-6 hover:text-blue-600"
+  >
+    Resume
+  </a>
 </nav>
