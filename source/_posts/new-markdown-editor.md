@@ -5,7 +5,7 @@ title: Made a markdown editor
 description: On making a markdown editor using Next.js.
 date: 2025-11-25
 order: 0
-tags: 
+tags:
   - markdown
   - nextjs
 ---
