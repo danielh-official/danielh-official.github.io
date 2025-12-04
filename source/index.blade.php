@@ -21,12 +21,12 @@
   <img
     src="/assets/img/about.png"
     alt="My photo"
-    class="flex w-64 h-64 mx-auto bg-contain shadow-sm aspect-square rounded-3xl shadow-gray-900/50 md:float-right md:ml-10"
+    class="mx-auto flex aspect-square h-64 w-64 rounded-3xl bg-contain shadow-sm shadow-gray-900/50 md:float-right md:ml-10"
   />
 </div>
 <div>
-  <div class="text-5xl text-center">Daniel Haven</div>
-  <p class="mt-4 text-xl text-center">
+  <div class="text-center text-5xl">Daniel Haven</div>
+  <p class="mt-4 text-center text-xl">
     Software Engineer and
     <span class="line-through">Coffee</span>
     Tea Enthusiast
@@ -47,7 +47,7 @@
     open to exploring other backend, full-stack, etc. technologies as needed (e.g., ruby on rails, asp.net, etc.).
   </p>
 </div>
-<div class="mt-6 ml-6">
+<div class="ml-6 mt-6">
   <img src="{{ generateGitHubReadMeMostUsedLanguagesLink() }}" alt="github stats - most used languages" />
 </div>
 @stop
