@@ -21,12 +21,12 @@
   <img
     src="/assets/img/about.png"
     alt="My photo"
-    class="mx-auto flex aspect-square h-64 w-64 rounded-3xl bg-contain shadow-sm shadow-gray-900/50 md:float-right md:ml-10"
+    class="flex w-64 h-64 mx-auto bg-contain shadow-sm aspect-square rounded-3xl shadow-gray-900/50 md:float-right md:ml-10"
   />
 </div>
 <div>
-  <div class="text-center text-5xl">Daniel Haven</div>
-  <p class="mt-4 text-center text-xl">
+  <div class="text-5xl text-center">Daniel Haven</div>
+  <p class="mt-4 text-xl text-center">
     Software Engineer and
     <span class="line-through">Coffee</span>
     Tea Enthusiast
@@ -47,14 +47,7 @@
     open to exploring other backend, full-stack, etc. technologies as needed (e.g., ruby on rails, asp.net, etc.).
   </p>
 </div>
-<div class="ml-6 mt-6">
+<div class="mt-6 ml-6">
   <img src="{{ generateGitHubReadMeMostUsedLanguagesLink() }}" alt="github stats - most used languages" />
-</div>
-<div>
-  <p>
-    As an Apple product owner, I've also been experimenting with developing iOS apps in Swift. My latest project can be
-    download @
-    <a href="https://streaksforynab.app/" target="_blank">streaksforynab.app</a>
-  </p>
 </div>
 @stop
