@@ -4,7 +4,8 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "prod": "vite build --mode production"
+        "prod": "vite build --mode production",
+        "format": "./vendor/bin/duster fix"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.8",
