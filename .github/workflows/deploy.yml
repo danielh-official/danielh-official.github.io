@@ -42,8 +42,8 @@ jobs:
             - name: Build assets
               run: npm run prod
 
-            - name: Build for production
-              run: npm run build:prod
+            # - name: Build for production
+            #   run: npm run build:prod
 
             - name: Setup Pages
               uses: actions/configure-pages@v4
