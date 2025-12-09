@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d7f1293d2a5293ff2d2653560382194",
+    "content-hash": "b8f40fb83c15a2f3f0e4e69f96d6ebfe",
     "packages": [
         {
             "name": "brick/math",
@@ -4854,64 +4854,6 @@
             "time": "2025-11-21T19:26:21+00:00"
         },
         {
-            "name": "tightenco/jigsaw-blog-template",
-            "version": "v1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tighten/jigsaw-blog-template.git",
-                "reference": "d652a9f9b6db87135daaae23e0e89ce98ac0b549"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tighten/jigsaw-blog-template/zipball/d652a9f9b6db87135daaae23e0e89ce98ac0b549",
-                "reference": "d652a9f9b6db87135daaae23e0e89ce98ac0b549",
-                "shasum": ""
-            },
-            "require": {
-                "samdark/sitemap": "^2.2.1",
-                "tightenco/jigsaw": "^1.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "App\\Listeners\\": "listeners/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anthony Terrell",
-                    "email": "anthony@tighten.co"
-                },
-                {
-                    "name": "Keith Damiani",
-                    "email": "keith@tighten.co"
-                },
-                {
-                    "name": "Matt Stauffer",
-                    "email": "matt@tighten.co"
-                }
-            ],
-            "description": "Blog starter template for Jigsaw static site generator by Tighten",
-            "keywords": [
-                "blog",
-                "generator",
-                "jigsaw",
-                "site",
-                "starter",
-                "static",
-                "template"
-            ],
-            "support": {
-                "issues": "https://github.com/tighten/jigsaw-blog-template/issues",
-                "source": "https://github.com/tighten/jigsaw-blog-template/tree/v1.4.1"
-            },
-            "time": "2025-07-03T19:56:14+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.2",
             "source": {
@@ -5070,75 +5012,7 @@
             "time": "2024-11-21T01:49:47+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "laravel/pint",
-            "version": "v1.26.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/pint.git",
-                "reference": "69dcca060ecb15e4b564af63d1f642c81a241d6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/69dcca060ecb15e4b564af63d1f642c81a241d6f",
-                "reference": "69dcca060ecb15e4b564af63d1f642c81a241d6f",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "ext-tokenizer": "*",
-                "ext-xml": "*",
-                "php": "^8.2.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.90.0",
-                "illuminate/view": "^12.40.1",
-                "larastan/larastan": "^3.8.0",
-                "laravel-zero/framework": "^12.0.4",
-                "mockery/mockery": "^1.6.12",
-                "nunomaduro/termwind": "^2.3.3",
-                "pestphp/pest": "^3.8.4"
-            },
-            "bin": [
-                "builds/pint"
-            ],
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "App\\": "app/",
-                    "Database\\Seeders\\": "database/seeders/",
-                    "Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "An opinionated code formatter for PHP.",
-            "homepage": "https://laravel.com",
-            "keywords": [
-                "dev",
-                "format",
-                "formatter",
-                "lint",
-                "linter",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/pint/issues",
-                "source": "https://github.com/laravel/pint"
-            },
-            "time": "2025-11-25T21:15:52+00:00"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {},
