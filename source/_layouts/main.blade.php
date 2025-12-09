@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {{-- MARK: - Meta --}}
+
         <meta charset="utf-8" />
         <meta
             name="viewport"
@@ -12,16 +14,21 @@
             content="{{ $page->description ?? $page->siteDescription }}"
         />
 
+        {{-- MARK: - Open Graph --}}
+
         <meta
             property="og:title"
             content="{{ $page->title ? $page->title . " | " : "" }}{{ $page->siteName }}"
         />
+        <meta property="og:image" content="assets/img/about.png" />
         <meta property="og:type" content="{{ $page->type ?? "website" }}" />
         <meta property="og:url" content="{{ $page->getUrl() }}" />
         <meta
             property="og:description"
             content="{{ $page->description ?? $page->siteDescription }}"
         />
+
+        {{-- MARK: - Other Head --}}
 
         <title>
             {{ $page->title ? $page->title . " | " : "" }}{{ $page->siteName }}
