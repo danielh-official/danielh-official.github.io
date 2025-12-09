@@ -20,7 +20,7 @@
             property="og:title"
             content="{{ $page->title ? $page->title . " | " : "" }}{{ $page->siteName }}"
         />
-        <meta property="og:image" content="assets/img/about.png" />
+        <meta property="og:image" content="/assets/img/about.png" />
         <meta property="og:type" content="{{ $page->type ?? "website" }}" />
         <meta property="og:url" content="{{ $page->getUrl() }}" />
         <meta
@@ -69,14 +69,14 @@
     </head>
 
     <body
-        class="flex min-h-screen flex-col justify-between bg-gray-100 font-sans leading-normal text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+        class="flex flex-col justify-between min-h-screen font-sans leading-normal text-gray-800 bg-gray-100 dark:bg-gray-900 dark:text-gray-200"
     >
         <header
-            class="flex h-24 items-center border-b py-4 shadow"
+            class="flex items-center h-24 py-4 border-b shadow"
             role="banner"
         >
             <div
-                class="max-w-8xl container mx-auto flex items-center px-4 lg:px-8"
+                class="container flex items-center px-4 mx-auto max-w-8xl lg:px-8"
             >
                 <div class="flex items-center">
                     <a
@@ -85,7 +85,7 @@
                         class="inline-flex items-center"
                     >
                         <img
-                            class="mr-3 h-8 md:h-10"
+                            class="h-8 mr-3 md:h-10"
                             src="/assets/img/logo.svg"
                             alt="{{ $page->siteName }} logo"
                         />
@@ -100,7 +100,7 @@
 
                 <div
                     id="vue-search"
-                    class="flex flex-1 items-center justify-end"
+                    class="flex items-center justify-end flex-1"
                 >
                     @include("_components.search")
 
@@ -115,13 +115,13 @@
 
         <main
             role="main"
-            class="container mx-auto w-full max-w-4xl flex-auto px-6 py-16"
+            class="container flex-auto w-full max-w-4xl px-6 py-16 mx-auto"
         >
             @yield("body")
         </main>
 
-        <footer class="mt-12 py-4 text-center text-sm" role="contentinfo">
-            <ul class="flex list-none flex-col justify-center md:flex-row">
+        <footer class="py-4 mt-12 text-sm text-center" role="contentinfo">
+            <ul class="flex flex-col justify-center list-none md:flex-row">
                 <li class="md:mr-2">&copy; Daniel Haven {{ date("Y") }}.</li>
 
                 <l class="md:mr-2">
@@ -147,7 +147,7 @@
         <a
             target="_blank"
             rel="noopener noreferrer"
-            class="fixed right-4 bottom-4 flex hidden gap-x-2 rounded bg-gray-800 px-4 py-2 text-white transition hover:bg-gray-700 md:flex"
+            class="fixed flex hidden px-4 py-2 text-white transition bg-gray-800 rounded right-4 bottom-4 gap-x-2 hover:bg-gray-700 md:flex"
             href="https://github.com/danielh-official/danielh-official.github.io"
         >
             <svg
