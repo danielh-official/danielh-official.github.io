@@ -9,21 +9,25 @@
         <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
     @endif
 
-    <h1 class="leading-none mb-2">{{ $page->title }}</h1>
+    <div class="flex gap-x-2">
+        <div><a href="/blog">Back to Blog</a></div>
+    </div>
 
-    <p class="text-gray-700 text-xl md:mt-0">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
+    <h1 class="mb-2 leading-none">{{ $page->title }}</h1>
+
+    <p class="text-gray-500 text-xlmd:mt-0 dark:text-gray-400">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
 
     @if ($page->categories)
         @foreach ($page->categories as $i => $category)
             <a
                 href="{{ '/blog/categories/' . $category }}"
                 title="View posts in {{ $category }}"
-                class="inline-block bg-gray-300 hover:bg-blue-200 leading-loose tracking-wide text-gray-800 uppercase text-xs font-semibold rounded-sm mr-4 px-3 pt-px"
+                class="inline-block px-3 pt-px mr-4 text-xs font-semibold leading-loose tracking-wide uppercase rounded-sm"
             >{{ $category }}</a>
         @endforeach
     @endif
 
-    <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
+    <div class="pb-4 mb-10 border-b border-blue-200" v-pre>
         @yield('content')
     </div>
 

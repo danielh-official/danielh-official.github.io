@@ -3,17 +3,17 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://localhost:8000',
     'production' => false,
-    'siteName' => 'Blog Starter Template',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
-    'siteAuthor' => 'Author Name',
+    'siteName' => 'danielhaven.dev',
+    'siteDescription' => 'Daniel Haven\'s Developer Site',
+    'siteAuthor' => 'Daniel Haven',
 
     // collections
     'collections' => [
         'posts' => [
-            'author' => 'Author Name', // Default author, if not provided in a post
-            'sort' => '-date',
+            'author' => 'Daniel Haven', // Default author, if not provided in a post
+            'sort' => ['-date', '-order'],
             'path' => 'blog/{filename}',
         ],
         'categories' => [
@@ -59,5 +59,17 @@ return [
     },
     'isActive' => function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
+    },
+    'getMenuItems' => function () {
+        return [
+            [
+                'name' => 'Blog',
+                'path' => '/blog',
+            ],
+            [
+                'name' => 'Career',
+                'path' => '/career',
+            ],
+        ];
     },
 ];
