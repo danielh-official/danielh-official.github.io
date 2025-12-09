@@ -29,29 +29,64 @@ I felt like a beginner again. I haven't touched ASP.Net Core since forever. Was 
 </div>
 
 <div>
-  <EditForm method="post" OnValidSubmit="@HandleFormSubmission" FormName="create" Enhance EditContext="_editContext">
+  <EditForm
+    method="post"
+    OnValidSubmit="@HandleFormSubmission"
+    FormName="create"
+    Enhance
+    EditContext="_editContext"
+  >
     <DataAnnotationsValidator />
     <ValidationSummary class="text-danger" role="alert" />
 
     <div class="my-3">
       <label for="name" class="form-label">Name</label>
-      <InputText class="form-control" id="name" @bind-Value="CreateWidgetModel.Name" required></InputText>
-      <ValidationMessage For="() => CreateWidgetModel.Name" class="text-danger" />
+      <InputText
+        class="form-control"
+        id="name"
+        @bind-Value="CreateWidgetModel.Name"
+        required
+      ></InputText>
+      <ValidationMessage
+        For="() => CreateWidgetModel.Name"
+        class="text-danger"
+      />
     </div>
     <div class="my-3">
       <label for="description" class="form-label">Description</label>
-      <InputTextArea class="form-control" id="description" @bind-Value="CreateWidgetModel.Description"></InputTextArea>
-      <ValidationMessage For="() => CreateWidgetModel.Description" class="text-danger" />
+      <InputTextArea
+        class="form-control"
+        id="description"
+        @bind-Value="CreateWidgetModel.Description"
+      ></InputTextArea>
+      <ValidationMessage
+        For="() => CreateWidgetModel.Description"
+        class="text-danger"
+      />
     </div>
     <div class="my-3">
       <label for="url" class="form-label">Url</label>
-      <InputText class="form-control" id="url" @bind-Value="CreateWidgetModel!.Url"></InputText>
-      <ValidationMessage For="() => CreateWidgetModel!.Url" class="text-danger" />
+      <InputText
+        class="form-control"
+        id="url"
+        @bind-Value="CreateWidgetModel!.Url"
+      ></InputText>
+      <ValidationMessage
+        For="() => CreateWidgetModel!.Url"
+        class="text-danger"
+      />
     </div>
     <div class="my-3">
       <label for="number" class="form-label">Number</label>
-      <InputText class="form-control" id="number" @bind-Value="CreateWidgetModel.WidgetNumberString" />
-      <ValidationMessage For="() => CreateWidgetModel!.WidgetNumberString" class="text-danger" />
+      <InputText
+        class="form-control"
+        id="number"
+        @bind-Value="CreateWidgetModel.WidgetNumberString"
+      />
+      <ValidationMessage
+        For="() => CreateWidgetModel!.WidgetNumberString"
+        class="text-danger"
+      />
     </div>
     <button type="submit" class="btn btn-primary">Create Widget</button>
   </EditForm>

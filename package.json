@@ -1,18 +1,21 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "prod": "vite build --mode production",
-        "format": "./vendor/bin/duster fix"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "^4.1.8",
-        "@tighten/jigsaw-vite-plugin": "^1.0.0",
-        "alpinejs": "^3.14.1",
-        "fuse.js": "^6.4.6",
-        "tailwindcss": "^4.1.0",
-        "vite": "^6.2.1"
-    }
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prod": "vite build --mode production",
+    "format": "./vendor/bin/duster fix && prettier --write ."
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@tighten/jigsaw-vite-plugin": "^1.0.0",
+    "alpinejs": "^3.14.1",
+    "fuse.js": "^6.4.6",
+    "prettier": "^3.7.4",
+    "prettier-plugin-blade": "^2.1.21",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.0",
+    "vite": "^6.2.1"
+  }
 }

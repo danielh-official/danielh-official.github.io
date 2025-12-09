@@ -6,7 +6,7 @@ description: Updated this site
 date: 2025-12-09
 order: 0
 categories:
-    - meta
+  - meta
 ---
 
 Updated this site to use the latest version of Jigsaw.
