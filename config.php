@@ -2,6 +2,26 @@
 
 use Illuminate\Support\Str;
 
+function getContactMailToLink(string $email, string $subject = '', string $body = '')
+{
+    $mailTo = "mailto:{$email}";
+
+    $params = [];
+    if ($subject) {
+        $params['subject'] = $subject;
+    }
+
+    if ($body) {
+        $params['body'] = $body;
+    }
+
+    foreach ($params as $key => $value) {
+        $mailTo .= (strpos($mailTo, '?') === false ? '?' : '&') . "{$key}={$value}";
+    }
+
+    return $mailTo;
+}
+
 return [
     'baseUrl' => 'http://localhost:8000',
     'production' => false,
@@ -69,6 +89,19 @@ return [
             [
                 'name' => 'Career',
                 'path' => '/career',
+            ],
+            [
+                'name' => 'Contact',
+                'path' => getContactMailToLink(
+                    'hello@danielhavendev.aleeas.com',
+                    'Contacting You From danielhaven.dev',
+                    'Hi Daniel,%0D%0A%0D%0AI would like to get in touch with you regarding...'
+                ),
+            ],
+            [
+                'name' => 'GitHub',
+                'path' => 'https://github.com/danielh-official',
+                'newTab' => true,
             ],
         ];
     },
