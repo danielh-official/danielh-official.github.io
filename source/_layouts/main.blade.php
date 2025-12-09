@@ -137,7 +137,7 @@
             </ul>
         </footer>
 
-        {{-- <a
+        <a
             target="_blank"
             rel="noopener noreferrer"
             class="fixed flex hidden px-4 py-2 text-white transition bg-gray-800 rounded right-4 bottom-4 gap-x-2 hover:bg-gray-700 md:flex"
@@ -155,7 +155,7 @@
                 ></path>
             </svg>
             View on GitHub
-        </a> --}}
+        </a>
 
         <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
