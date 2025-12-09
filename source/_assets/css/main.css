@@ -22,6 +22,8 @@
 
   body {
     font-family: var(--font-sans);
+    @apply dark:bg-gray-900;
+    @apply dark:text-gray-200;
   }
 }
 
@@ -29,16 +31,6 @@
   .shadow-search {
     box-shadow: var(--shadow-search);
   }
-}
-
-/* Syntax Highlight by Prism */
-/* https://prismjs.com/ */
-
-/* You can customize the theme of the Prism syntax highlighter below. Adjust colors, backgrounds, and styles as needed for your site. */
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #e5e7eb;
 }
 
 .token.operator,
