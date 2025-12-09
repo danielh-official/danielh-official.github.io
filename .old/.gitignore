@@ -1,0 +1,21 @@
+# Build directories (handled by GitHub Actions)
+/build_local/
+/build_production/
+
+# Dependencies
+/node_modules/
+/source/assets/build/
+/vendor/
+.DS_Store
+
+# Cache directories
+/cache/
+*.cache
+
+# Pint temporary files
+.php-cs-fixer.cache
+
+# Prettier cache
+.prettiercache
+
+
