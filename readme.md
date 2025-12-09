@@ -6,42 +6,59 @@ Developer blog website built with Jigsaw.
 
 ### Local Development
 
-````bash
-# Install dependencies
-composer install && npm install
+Install dependencies:
 
+```bash
+composer install && npm install
+```
+
+Run PHP server:
+
+```bash
+./vendor/bin/jigsaw serve
+```
+
+In a another terminal instance while the php server is running:
+
+```bash
 # run development server
 npm run dev
 
+# or
+
 # build static files with Vite
 npm run build
+```
 
+Other commands:
+
+```bash
 # Format code
 npm run format
-````
+```
 
 ## 📝 Content
 
--   **Blog Posts**: Located in `source/_posts/`
--   **Pages**: Located in `source/`
--   **Components**: Located in `source/_components/`
--   **Layouts**: Located in `source/_layouts/`
+- **Blog Posts**: Located in `source/_posts/`
+- **Pages**: Located in `source/`
+- **Components**: Located in `source/_components/`
+- **Layouts**: Located in `source/_layouts/`
 
 ## 🚀 Deployment
 
 This site is automatically deployed to GitHub Pages using GitHub Actions:
 
--   **Trigger**: Push to `main` branch
--   **Build**: PHP 8.2 + Node.js 18
--   **Deploy**: GitHub Pages via Actions
--   **URL**: https://danielh-official.github.io/
+- **Trigger**: Push to `main` branch
+- **Build**: PHP 8.2 + Node.js 18
+- **Deploy**: GitHub Pages via Actions
+- **URL**: https://danielh-official.github.io/
 
 ## 🔧 Configuration
 
 Key configuration is in `config.php`:
 
--   Site metadata
--   Collections (posts, categories)
+- Site metadata
+- Collections (posts, categories)
 
 `config.production.php` overrides config in production environments.
 
@@ -70,13 +87,13 @@ After installing Jigsaw, run the following command from your project directory:
 
 This starter template includes samples of common page types, and comes pre-configured with:
 
--   A fully responsive navigation bar
--   [Tailwind CSS](https://tailwindcss.com/), a utility CSS framework that allows you to customize your design without touching a line of CSS
--   Syntax highlighting using [Prism](https://prismjs.com/)
--   A script that automatically generates a `sitemap.xml` file
--   A custom 404 page
--   A sample contact form
--   A search bar powered by [Fuse.js](http://fusejs.io/) and [Alpine.js](https://alpinejs.dev/), which indexes your content automatically and requires zero configuration
+- A fully responsive navigation bar
+- [Tailwind CSS](https://tailwindcss.com/), a utility CSS framework that allows you to customize your design without touching a line of CSS
+- Syntax highlighting using [Prism](https://prismjs.com/)
+- A script that automatically generates a `sitemap.xml` file
+- A custom 404 page
+- A sample contact form
+- A search bar powered by [Fuse.js](http://fusejs.io/) and [Alpine.js](https://alpinejs.dev/), which indexes your content automatically and requires zero configuration
 
 ---
 
