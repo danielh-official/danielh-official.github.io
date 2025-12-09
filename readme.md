@@ -8,10 +8,8 @@ Developer blog website built with Jigsaw.
 
 ````bash
 # Install dependencies
-composer install
-npm install
+composer install && npm install
 
-```bash
 # run development server
 npm run dev
 
