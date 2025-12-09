@@ -72,7 +72,7 @@
             "@type": "WebPage",
             "@id": "{{ $page->getUrl() }}"
         }
-        @if($page->cover_image)
+        @if ($page->cover_image)
         ,"image": "{{ $page->cover_image }}"
         @endif
     }
