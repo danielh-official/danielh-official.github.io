@@ -17,11 +17,18 @@
                 return date.toLocaleDateString(undefined, options);
             }
         }" x-text="formatDate('{{ $utcEndDate }}')"></span>
-        &nbsp;(Total:
-        <x-total-experience utcStartDate="{{ $utcStartDate }}" utcEndDate="{{ $utcEndDate }}" />
-        )
+        -
+        <span class="text-gray-600 dark:text-gray-400">
+            <x-total-experience utcStartDate="{{ $utcStartDate }}" utcEndDate="{{ $utcEndDate }}" />
+        </span>
     </div>
     <div>
         {{ $slot }}
     </div>
+    @isset($tags)
+        <div class="my-2">
+            {{ $tags }}
+        </div>
+    @endisset
+    <hr />
 </div>
