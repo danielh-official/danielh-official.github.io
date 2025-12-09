@@ -1,6 +1,10 @@
 @extends('_layouts.main')
 
 @section('body')
+    <div class="flex gap-x-2">
+        <div><a href="/blog">Back to Blog</a></div>
+    </div>
+
     <h1>{{ $page->title }}</h1>
 
     <div class="pb-10 mb-6 text-2xl border-b border-blue-200">

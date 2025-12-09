@@ -55,7 +55,7 @@ description: My career history
 
         <x-slot:tags>
             <x-tag bgColor="blue">Technical Support</x-tag>
-            <x-tag bgColor="yellow">Data Analysis</x-tag>
+            <x-tag bgColor="yellow" textColor="black">Data Analysis</x-tag>
             <x-tag bgColor="purple">Reporting</x-tag>
         </x-slot:tags>
     </x-work-history-record>
