@@ -8,6 +8,10 @@ pagination:
 
 @extends("_layouts.main")
 
+@section("search")
+    @include("_components.search")
+@endsection
+
 @section("body")
 <h1>Blog</h1>
 
