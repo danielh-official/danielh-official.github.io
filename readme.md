@@ -6,6 +6,13 @@ Developer blog website built with Jigsaw.
 
 ### Local Development
 
+Fork and clone
+
+```bash
+git clone https://github.com/YOUR-USERNAME/danielh-official.github.io.git
+cd danielh-official.github.io
+```
+
 Install dependencies:
 
 ```bash
