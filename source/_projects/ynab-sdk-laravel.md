@@ -10,6 +10,6 @@ excerpt: 'A PHP composer package for accessing the YNAB API on a Laravel app.'
 image: 'ynab-sdk-laravel.png'
 technologies: ['php', 'laravel', 'api', 'ynab']
 repository_link: https://github.com/danielh-official/ynab-sdk-laravel
-is_featured: true
+is_featured: false
 ---
 
