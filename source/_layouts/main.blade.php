@@ -35,7 +35,7 @@
         </title>
 
         <link rel="home" href="{{ $page->baseUrl }}" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/img/logo.svg" />
         <link
             href="/blog/feed.atom"
             type="application/atom+xml"
@@ -89,12 +89,6 @@
                             src="/assets/img/logo.svg"
                             alt="{{ $page->siteName }} logo"
                         />
-
-                        <h1
-                            class="my-0 text-lg font-semibold text-blue-800 hover:text-blue-600 md:text-2xl dark:text-blue-400"
-                        >
-                            {{ $page->siteName }}
-                        </h1>
                     </a>
                 </div>
 
