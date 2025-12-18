@@ -47,7 +47,7 @@ return [
         'projects' => [
             'sort' => ['-order'],
             'path' => 'projects/{filename}',
-        ]
+        ],
     ],
 
     // helpers
@@ -123,7 +123,7 @@ return [
         ];
     },
     'getProjectCoverImage' => function ($page) {
-        return $page->image ? vite('/assets/img/projects/'.$page->image) : null;
+        return $page->image ? vite('/assets/img/projects/' . $page->image) : null;
     },
     'getProjectRepositoryLink' => function ($page) {
         return $page->repository_link ?? null;
