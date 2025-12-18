@@ -118,7 +118,7 @@ return [
         ];
     },
     'getProjectCoverImage' => function ($page) {
-        return $page->image ? "/assets/img/projects/$page->image" : null;
+        return $page->image ? "/assets/img/projects/{$page->image}" : null;
     },
     'getProjectRepositoryLink' => function ($page) {
         return $page->repository_link ?? null;
