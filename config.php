@@ -96,16 +96,12 @@ return [
     'getMenuItems' => function () {
         return [
             [
-                'name' => 'Blog',
-                'path' => '/blog',
-            ],
-            [
                 'name' => 'Projects',
                 'path' => '/projects',
             ],
             [
-                'name' => 'Career',
-                'path' => '/career',
+                'name' => 'Blog',
+                'path' => '/blog',
             ],
             [
                 'name' => 'Contact',
@@ -114,11 +110,6 @@ return [
                     'Contacting You From danielhaven.dev',
                     'Hi Daniel,%0D%0A%0D%0AI would like to get in touch with you regarding...'
                 ),
-            ],
-            [
-                'name' => 'GitHub',
-                'path' => 'https://github.com/danielh-official',
-                'newTab' => true,
             ],
         ];
     },
