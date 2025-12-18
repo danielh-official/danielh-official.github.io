@@ -33,7 +33,7 @@ return [
     'collections' => [
         'posts' => [
             'author' => 'Daniel Haven', // Default author, if not provided in a post
-            'sort' => ['-date', '-order'],
+            'sort' => ['-date', 'order'],
             'path' => 'blog/{filename}',
         ],
         'categories' => [
@@ -44,11 +44,24 @@ return [
                 });
             },
         ],
+        'projects' => [
+            'sort' => ['-order'],
+            'path' => 'projects/{filename}',
+        ]
     ],
 
     // helpers
     'getDate' => function ($page) {
-        return Datetime::createFromFormat('U', $page->date);
+        return $page->date ? Datetime::createFromFormat('U', $page->date) : null;
+    },
+    'getStartDate' => function ($page) {
+        return $page->start_date ? Datetime::createFromFormat('U', $page->start_date) : null;
+    },
+    'getEndDate' => function ($page) {
+        return $page->end_date ? Datetime::createFromFormat('U', $page->end_date) : null;
+    },
+    'getWebsiteLink' => function ($page) {
+        return $page->website_link ?? null;
     },
     'getExcerpt' => function ($page, $length = 255) {
         if ($page->excerpt) {
@@ -87,6 +100,10 @@ return [
                 'path' => '/blog',
             ],
             [
+                'name' => 'Projects',
+                'path' => '/projects',
+            ],
+            [
                 'name' => 'Career',
                 'path' => '/career',
             ],
@@ -104,5 +121,11 @@ return [
                 'newTab' => true,
             ],
         ];
+    },
+    'getProjectCoverImage' => function ($page) {
+        return $page->image ? vite('/assets/img/projects/'.$page->image) : null;
+    },
+    'getProjectRepositoryLink' => function ($page) {
+        return $page->repository_link ?? null;
     },
 ];
