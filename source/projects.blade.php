@@ -3,7 +3,7 @@ title: Projects
 description: The list of projects I've been involved in
 pagination:
     collection: projects
-    perPage: 6
+    perPage: 10
 ---
 
 @extends('_layouts.main')
@@ -11,7 +11,7 @@ pagination:
 @section('body')
     <h1>Projects</h1>
 
-    <div class="grid grid-cols-2 gap-12 mt-6">
+    <div class="grid grid-cols-3 gap-12 mt-6">
         @foreach ($pagination->items as $project)
             @include('_components.project-preview-inline')
         @endforeach
