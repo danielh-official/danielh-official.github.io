@@ -96,6 +96,10 @@ return [
     'getMenuItems' => function () {
         return [
             [
+                'name' => 'Home',
+                'path' => '/',
+            ],
+            [
                 'name' => 'Projects',
                 'path' => '/projects',
             ],
