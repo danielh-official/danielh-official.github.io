@@ -8,6 +8,7 @@
             "layout" => "pie",
             "theme" => "transparent",
             "custom_title" => "Current most used languages",
+            "card_width" => "400",
         ];
 
         $queryParams = http_build_query($query);
@@ -56,7 +57,7 @@
         asp.net, etc.).
     </p>
 </div>
-<div class="mt-6 ml-6">
+<div class="mt-6 ml-6" style="justify-self: center;">
     <img
         src="{{ generateGitHubReadMeMostUsedLanguagesLink() }}"
         alt="github stats - most used languages"
