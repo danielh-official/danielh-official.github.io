@@ -104,6 +104,10 @@ return [
                 'path' => '/projects',
             ],
             [
+                'name' => 'Career',
+                'path' => '/career',
+            ],
+            [
                 'name' => 'Blog',
                 'path' => '/blog',
             ],
