@@ -2,10 +2,10 @@
 extends: _layouts.post
 section: content
 title: Added a Projects Section
-description: 
+description:
 date: 2025-12-19
 order: 0
-categories: 
+categories:
   - meta
 ---
 

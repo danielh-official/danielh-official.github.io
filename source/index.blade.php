@@ -57,7 +57,7 @@
         asp.net, etc.).
     </p>
 </div>
-<div class="mt-6 ml-6" style="justify-self: center;">
+<div class="mt-6 ml-6" style="justify-self: center">
     <img
         src="{{ generateGitHubReadMeMostUsedLanguagesLink() }}"
         alt="github stats - most used languages"
@@ -66,16 +66,16 @@
 <hr class="mt-6" />
 
 @php
-$featuredProjects = $projects->filter(function ($project) {
-    return $project->is_featured ?? false;
-});
+    $featuredProjects = $projects->filter(function ($project) {
+        return $project->is_featured ?? false;
+    });
 @endphp
 
 <h2 class="mt-12 mb-6 text-6xl">Featured Projects</h2>
 
-<div class="grid md:grid-cols-2 gap-12">
+<div class="grid gap-12 md:grid-cols-2">
     @foreach ($featuredProjects as $project)
-        @include('_components.project-preview-inline')
+        @include("_components.project-preview-inline")
     @endforeach
 </div>
 

@@ -4,7 +4,7 @@ section: content
 title: I Don't Want To Use Your "AI" App
 date: 2025-12-23
 order: -3
-categories: 
+categories:
   - ai
   - opinion
   - marketing

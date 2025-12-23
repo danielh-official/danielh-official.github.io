@@ -1,31 +1,31 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "prod": "vite build --mode production",
-        "format": "./vendor/bin/duster fix && prettier --write .",
-        "parse:categories": "tsx scripts/check-categories.ts"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "^4.1.8",
-        "@tighten/jigsaw-vite-plugin": "^1.0.0",
-        "@types/js-yaml": "^4.0.9",
-        "@types/node": "^25.0.3",
-        "alpinejs": "^3.14.1",
-        "fs": "0.0.1-security",
-        "fuse.js": "^6.4.6",
-        "js-yaml": "^4.1.1",
-        "path": "^0.12.7",
-        "prettier": "^3.7.4",
-        "prettier-plugin-blade": "^2.1.21",
-        "prettier-plugin-tailwindcss": "^0.7.2",
-        "tailwindcss": "^4.1.0",
-        "vite": "^6.2.1"
-    },
-    "dependencies": {
-        "save-dev": "0.0.1-security",
-        "tsx": "^4.21.0"
-    }
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prod": "vite build --mode production",
+    "format": "./vendor/bin/duster fix && prettier --write .",
+    "parse:categories": "tsx scripts/check-categories.ts"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@tighten/jigsaw-vite-plugin": "^1.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.0.3",
+    "alpinejs": "^3.14.1",
+    "fs": "0.0.1-security",
+    "fuse.js": "^6.4.6",
+    "js-yaml": "^4.1.1",
+    "path": "^0.12.7",
+    "prettier": "^3.7.4",
+    "prettier-plugin-blade": "^2.1.21",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.0",
+    "vite": "^6.2.1"
+  },
+  "dependencies": {
+    "save-dev": "0.0.1-security",
+    "tsx": "^4.21.0"
+  }
 }

@@ -2,10 +2,10 @@
 extends: _layouts.post
 section: content
 title: DRY Principle and DATE Principle - Don't Abstract Too Early
-description: 
+description:
 date: 2025-12-19
 order: 1
-categories: 
+categories:
   - essay
   - concepts
   - coding
@@ -13,7 +13,7 @@ categories:
 
 The DRY (Don’t Repeat Yourself) principle is a mainstay not only of OOP, but also of component architecture (e.g., React, Vue, Svelte, Angular, Web Components, etc.).
 
-If you have repetitive code, it may make sense to combine it into a single class, method, or component so that changes made in one location apply everywhere it’s used. Without tests to cover your code, this can become even more seductive, as the developer may *feel* more secure having his or her logic in one place rather than duplicated across multiple locations.
+If you have repetitive code, it may make sense to combine it into a single class, method, or component so that changes made in one location apply everywhere it’s used. Without tests to cover your code, this can become even more seductive, as the developer may _feel_ more secure having his or her logic in one place rather than duplicated across multiple locations.
 
 The problem is that when you employ the DRY principle too early—during the initial phases of development, before the final business logic is even hashed out—abstracting repeating code can lead to maintainability issues once the business logic evolves in ways that no longer align with the original abstraction.
 
@@ -91,7 +91,7 @@ Another reason to follow the DATE principle is developer sanity. Keeping code in
 
 Employing test-driven and documentation-driven practices from the outset allows you to write code without abstraction while still maintaining confidence. If a typo slips in during a copy/paste, tests or documentation can help catch it early.
 
-With AI in particular, writing clear documentation that describes how your code *should* work can be used to prompt the model to search for inconsistencies across the codebase—without requiring the upfront investment of building a full test suite for a product that may still be in the proof-of-concept phase.
+With AI in particular, writing clear documentation that describes how your code _should_ work can be used to prompt the model to search for inconsistencies across the codebase—without requiring the upfront investment of building a full test suite for a product that may still be in the proof-of-concept phase.
 
 Tests can then be introduced later to catch those inconsistencies in an automated and more reliable way.
 

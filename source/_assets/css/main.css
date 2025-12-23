@@ -44,13 +44,15 @@
   background: transparent;
 }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-    @apply bg-white;
-    @apply dark:bg-gray-800;
-    @apply dark:text-white;
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  @apply bg-white;
+  @apply dark:bg-gray-800;
+  @apply dark:text-white;
 }
 
-code[class*="language-"], pre[class*="language-"] {
-    @apply dark:text-gray-200;
-    @apply dark:text-shadow-white;
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply dark:text-gray-200;
+  @apply dark:text-shadow-white;
 }
