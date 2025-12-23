@@ -11,7 +11,7 @@ pagination:
 @section("body")
 <h1>Projects</h1>
 
-<div class="mt-6 grid gap-12 md:grid-cols-3">
+<div class="mt-6 grid gap-12 md:grid-cols-2">
     @foreach ($pagination->items as $project)
         @include("_components.project-preview-inline")
     @endforeach
