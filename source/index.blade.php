@@ -73,7 +73,7 @@ $featuredProjects = $projects->filter(function ($project) {
 
 <h2 class="mt-12 mb-6 text-6xl">Featured Projects</h2>
 
-<div class="grid grid-cols-2 gap-12">
+<div class="grid md:grid-cols-2 gap-12">
     @foreach ($featuredProjects as $project)
         @include('_components.project-preview-inline')
     @endforeach
