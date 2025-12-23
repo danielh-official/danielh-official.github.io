@@ -27,11 +27,11 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Check for missing categories
         id: check
-        run: pnpm parse:categories
+        run: npm run parse:categories
 
       - name: Create Pull Request
         if: steps.check.outputs.has_missing == 'true'
