@@ -8,6 +8,6 @@ order: 7
 # end_date: ''
 excerpt: "A Laravel API server with self-generating documentation."
 image: laravel-api-server-demo.png
-technologies: ["laravel", "api", "docs"]
+tags: ["laravel", "api", "docs"]
 repository_link: https://github.com/danielh-official/laravel-api-server-demo
 ---

@@ -50,10 +50,10 @@
         </div>
 
         <div>
-            @foreach ($project->technologies as $technology)
+            @foreach ($project->tags as $tag)
                 <span
                     class="inline-block bg-gray-200 px-3 py-1 mt-2 mr-2 text-md font-semibold text-gray-700 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                    #{{ $technology }}
+                    #{{ $tag }}
                 </span>
             @endforeach
         </div>

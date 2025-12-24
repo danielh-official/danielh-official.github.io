@@ -8,6 +8,6 @@ website_link: https://larajobs-extra.vercel.app/
 # end_date: ''
 excerpt: "A larajobs.com parser for filtering on job board data."
 image: larajobs-extra.png
-technologies: ["sveltejs", "typescript/javascript"]
+tags: ["sveltejs", "typescript/javascript"]
 repository_link: https://github.com/danielh-official/larajobs-extra
 ---
