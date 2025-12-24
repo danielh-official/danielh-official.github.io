@@ -1,6 +1,6 @@
 <div class="mb-4 flex flex-col gap-y-4">
     @if ($project->getProjectCoverImage())
-        <div>
+        <div class="h-50 overflow-hidden">
             <img src="{{ $project->getProjectCoverImage() }}" alt="{{ $project->title }} cover image"
                 class="mt-4 rounded-lg border border-gray-200 shadow-md dark:border-gray-700 transition ease-in duration-300 transform hover:scale-110" />
         </div>
@@ -47,6 +47,13 @@
                     View Source
                 </a>
             @endif
+        </div>
+
+        <div class="my-8 text-end">
+            <a class="github-button" href="{{ $project->getProjectRepositoryLink() }}" data-icon="octicon-star"
+                data-size="large" data-show-count="true" aria-label="Star {{ $project->title }} on GitHub">
+                Star
+            </a>
         </div>
 
         <div>
