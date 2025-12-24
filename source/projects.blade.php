@@ -3,33 +3,30 @@ title: Projects
 description: The list of projects I've been involved in
 pagination:
     collection: projects
-    perPage: 10
+    perPage: 100
 ---
 
 @extends('_layouts.main')
 
 @section('body')
-    <h1>Projects</h1>
-
-    <div class="mt-6" x-data="{
+    <div x-data="{
         titleFilter: '',
         tagsFilter: [],
         allTags: [],
+        projects: [],
         init() {
             const params = new URLSearchParams(window.location.search)
             this.titleFilter = params.get('titleContains') || ''
             this.tagsFilter = params.getAll('tag').map(tag => tag.toLowerCase())
 
-            const tagsSet = new Set()
+            this.computeAllTags()
 
-            this.$el.querySelectorAll('[data-tags]').forEach(el => {
-                try {
-                    const tags = JSON.parse(el.dataset.tags || '[]')
-                    tags.forEach(tag => tagsSet.add(tag))
-                } catch (e) {}
-            })
-
-            this.allTags = Array.from(tagsSet).sort((a, b) => a.localeCompare(b))
+            this.projects = Array.from(this.$el.querySelectorAll('[data-title]'))
+                .filter(el => this.matchesProject(el.dataset.title || '', el.dataset.tags || '[]'))
+                .map(el => ({
+                    title: el.dataset.title || '',
+                    tagsJson: el.dataset.tags || '[]',
+                }))
         },
         matchesTitle(title) {
             if (!this.titleFilter) return true
@@ -53,6 +50,23 @@ pagination:
         matchesProject(title, tagsJson) {
             return this.matchesTitle(title) && this.matchesTags(tagsJson)
         },
+        computeAllTags() {
+            const tagsSet = new Set()
+
+            this.$el.querySelectorAll('[data-tags]').forEach(el => {
+                const title = el.dataset.title || ''
+                const tagsJson = el.dataset.tags || '[]'
+
+                if (!this.matchesProject(title, tagsJson)) return
+
+                try {
+                    const tags = JSON.parse(tagsJson || '[]')
+                    tags.forEach(tag => tagsSet.add(tag))
+                } catch (e) {}
+            })
+
+            this.allTags = Array.from(tagsSet).sort((a, b) => a.localeCompare(b))
+        },
         isTagActive(tag) {
             return this.tagsFilter.includes(tag.toLowerCase())
         },
@@ -66,10 +80,12 @@ pagination:
             }
 
             this.updateUrl()
+            location.reload()
         },
         clearAllTags() {
             this.tagsFilter = []
             this.updateUrl()
+            location.reload()
         },
         updateUrl() {
             const params = new URLSearchParams(window.location.search)
@@ -89,7 +105,9 @@ pagination:
             window.history.replaceState({}, '', newUrl)
         },
     }">
-        <div class="mb-6 flex flex-wrap gap-2" x-show="allTags.length" x-cloak>
+        <h1>Projects (<span x-text="projects.length"></span>)</h1>
+
+        <div class="mb-6 flex flex-wrap gap-2">
             <button type="button"
                 class="rounded-full border border-gray-300 px-3 py-1 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700 cursor-pointer"
                 x-show="tagsFilter.length" @click="clearAllTags()">
