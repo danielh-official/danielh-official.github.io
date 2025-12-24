@@ -11,9 +11,28 @@ pagination:
 @section("body")
 <h1>Projects</h1>
 
-<div class="mt-6 grid gap-12 md:grid-cols-2">
+<div
+    class="mt-6 grid gap-12 md:grid-cols-2"
+    x-data="{
+        titleFilter: '',
+        init() {
+            const params = new URLSearchParams(window.location.search)
+            this.titleFilter = params.get('titleContains') || ''
+        },
+        matchesTitle(title) {
+            if (! this.titleFilter) return true
+            return title.toLowerCase().includes(this.titleFilter.toLowerCase())
+        },
+    }"
+>
     @foreach ($pagination->items as $project)
-        @include("_components.project-preview-inline")
+        <div
+            x-show="matchesTitle($el.dataset.title)"
+            x-cloak
+            data-title="{{ $project->title }}"
+        >
+            @include("_components.project-preview-inline")
+        </div>
     @endforeach
 </div>
 
