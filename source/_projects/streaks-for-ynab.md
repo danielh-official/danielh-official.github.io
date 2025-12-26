@@ -8,7 +8,7 @@ start_date: "2025-12-15"
 end_date: "2025-12-22"
 excerpt: "Track your spending habits with YNAB."
 image: "streaks-for-ynab.png"
-tags: ["sveltejs", "typescript/javascript"]
+tags: ["sveltejs", "typescript/javascript", "ynab"]
 repository_link: https://github.com/danielh-official/streaksforynab
 is_featured: true
 ---
