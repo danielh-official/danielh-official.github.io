@@ -147,7 +147,7 @@ pagination:
                 x-show="matchesProject($el.dataset.title, $el.dataset.tags)"
                 x-cloak
                 data-title="{{ $project->title }}"
-                data-tags="{{ $project->tags }}"
+                data-tags="{{ json_encode($project->tags) }}"
             >
                 @include("_components.project-preview-inline")
             </div>
