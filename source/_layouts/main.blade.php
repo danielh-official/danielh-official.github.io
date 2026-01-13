@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta name="google-site-verification" content="pKlcUZ6NkunTSDervUmqXGxFLWQe7ZqhurZiGgLFFIk" />
+    
     {{-- MARK: - Meta --}}
 
     <meta charset="utf-8" />
