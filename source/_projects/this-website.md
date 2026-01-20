@@ -7,9 +7,9 @@ excerpt: My dev portfolio and site
 image: this-website.png
 tags:
   - php
-  - tightenco/jigsaw
   - github-pages
   - static-sites
+  - tightenco-jigsaw
 repository_link: https://github.com/danielh-official/danielh-official.github.io
 is_featured: true
 ---
