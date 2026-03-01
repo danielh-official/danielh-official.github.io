@@ -6,9 +6,9 @@ import xIcon from "../assets/x.svg";
 import {Image} from "astro:assets";
 
 const links = [
-    {label: "GitHub", href: "https://github.com/danielh-official", color: "#24292e", icon: githubIcon},
-    {label: "LinkedIn", href: "https://www.linkedin.com/in/danielh0/", color: "#0A66C2", icon: linkedinIcon},
-    {label: "X", href: "https://x.com/danielhaven0", color: "#000000", icon: xIcon},
+    {label: "danielh-official", href: "https://github.com/danielh-official", color: "#24292e", icon: githubIcon, alt: "github.com/danielh-official"},
+    {label: "danielh0", href: "https://www.linkedin.com/in/danielh0/", color: "#0A66C2", icon: linkedinIcon, alt: "linkedin.com/in/danielh0"},
+    {label: "danielhaven0", href: "https://x.com/danielhaven0", color: "#000000", icon: xIcon, alt: "x.com/danielhaven0"},
 ];
 ---
 
@@ -39,7 +39,7 @@ const links = [
 
                 <div class="flex flex-col gap-3">
                     {
-                        links.map(({label, href, color, icon}) => (
+                        links.map(({label, href, color, icon, alt}) => (
                             <a
                                 href={href}
                                 target="_blank"
@@ -48,7 +48,7 @@ const links = [
                                 style={`border-color: ${color};`}
                             >
                                 <span style={`color: ${color};`}>
-                                    <Image src={icon} alt={label} width={32} height={32} />
+                                    <Image src={icon} alt={alt} width={32} height={32} />
                                 </span>
                                 <span class="flex flex-1 justify-center font-semibold pr-8" style="color: black;">
                                     {label}
