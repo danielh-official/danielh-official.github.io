@@ -38,6 +38,23 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
+## Running with Docker
+
+Build and run the site in a container:
+
+```sh
+docker build -t danielh-site .
+docker run -p 8080:80 danielh-site
+```
+
+Or use Docker Compose:
+
+```sh
+docker compose up --build
+```
+
+The site is available at `http://localhost:8080`.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
