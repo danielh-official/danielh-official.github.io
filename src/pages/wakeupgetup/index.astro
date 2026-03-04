@@ -1,0 +1,146 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
+import ContentView9Days from "@/assets/wakeupgetup/screenshots/ContentView9Days.png";
+import HistoryView9Days from "@/assets/wakeupgetup/screenshots/HistoryView9Days.png";
+import AddLog from "@/assets/wakeupgetup/screenshots/AddLog.png";
+import SettingsView from "@/assets/wakeupgetup/screenshots/SettingsView.png";
+import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
+---
+
+<Layout title="Wake Up, Get Up">
+  <link slot="favicon" rel="icon" type="image/png" href={wakeupgetupIcon.src} />
+
+  <section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
+    <div class="flex flex-col items-center gap-4">
+      <img
+        src={wakeupgetupIcon.src}
+        alt="Wake Up, Get Up app icon"
+        class="h-20 w-20 rounded-3xl shadow-sm"
+        loading="lazy"
+      />
+      <div class="space-y-2">
+        <h1 class="m-0 text-2xl font-bold tracking-tight">Wake Up, Get Up</h1>
+        <p class="m-0 text-sm text-gray-600">
+          Track the time between waking up and actually getting out of bed.
+        </p>
+        <p class="m-0 text-sm text-gray-500">
+          Ever wondered how long you spend doomscrolling before your day really
+          starts?
+        </p>
+        <p class="m-0 text-sm text-gray-500">Log it here.</p>
+      </div>
+    </div>
+
+    <div
+      class="flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row"
+    >
+      <a
+        href="https://testflight.apple.com/join/yRsNBrum"
+        class="inline-flex items-center justify-center rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 hover:no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-black"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join TestFlight
+      </a>
+      <div class="flex w-full justify-center gap-3 sm:w-auto">
+        <span class="text-sm text-gray-300" aria-hidden="true">•</span>
+        <a href="/wakeupgetup/privacy" class="text-sm text-gray-600">
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10 flex w-full max-w-xl flex-col gap-4">
+    <h2 class="text-center text-lg font-bold sm:text-left">Features</h2>
+    <ul class="list-inside list-disc space-y-3 text-sm text-gray-600">
+      <li>
+        <b>Simple Entry</b> &mdash; Log when you <span class="font-medium"
+          >wake up</span
+        > and when you <span class="font-medium">get out of bed</span>.
+      </li>
+      <li>
+        <b>Charts</b> &mdash; See the last 7 days average of your duration in bed
+        as well as a 7-day chart.
+      </li>
+      <li>
+        <b>Notifications</b> &mdash; Set a daily reminder to log your wake-up and
+        get-up times.
+      </li>
+      <li>
+        <b>Apple Shortcuts</b> &mdash; Extend Wake Up, Get Up's functionality
+        <ul class="list-circle ml-5 list-inside pt-3 text-sm text-gray-600">
+          <li>Add Log &mdash; Add a new log for a given date.</li>
+          <li>Update Log &mdash; Update a log for a given date.</li>
+          <li>Find Log &mdash; Find a log for a given date.</li>
+          <li>Get Logs &mdash; Get all logs up to a limit.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="mt-8 flex w-full flex-col gap-4">
+    <h2 class="text-center text-lg font-bold sm:text-left">Screenshots</h2>
+
+    <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-4">
+      <ScreenshotFrame
+        src={ContentView9Days.src}
+        alt="Content View - 9 Days"
+        width={ContentView9Days.width}
+        height={ContentView9Days.height}
+        caption="Home screen - add log for today and view charts"
+      />
+      <ScreenshotFrame
+        src={HistoryView9Days.src}
+        alt="History View - 9 Days"
+        width={HistoryView9Days.width}
+        height={HistoryView9Days.height}
+        caption="History screen - view all your logs"
+      />
+      <ScreenshotFrame
+        src={AddLog.src}
+        alt="Add Log"
+        width={AddLog.width}
+        height={AddLog.height}
+        caption="Add Log screen - simply add wake up and get up times and optionally add a note"
+      />
+      <ScreenshotFrame
+        src={SettingsView.src}
+        alt="Settings View"
+        width={SettingsView.width}
+        height={SettingsView.height}
+        caption="Settings screen - configure a daily reminder to log your wake up and get up times"
+      />
+    </div>
+  </section>
+
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
+  >
+    <h2 class="text-center text-lg font-bold sm:text-left">
+      About the developer
+    </h2>
+    <p class="text-sm text-gray-600">
+      Wake Up, Get Up is currently being built and maintained by one person.
+    </p>
+    <div class="flex flex-wrap items-center gap-3 text-sm">
+      Find me on:
+      <a
+        href="https://github.com/danielh-official"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+      <span class="text-gray-300" aria-hidden="true">•</span>
+      <a
+        href="https://x.com/danielhaven0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        X (Twitter)
+      </a>
+    </div>
+  </section>
+</Layout>

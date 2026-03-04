@@ -1,0 +1,69 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
+
+function generateMailToLink(subject: string, body: string) {
+  return `mailto:d-haven@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+const lastUpdated = new Date("2026-03-04");
+---
+
+<Layout title="Privacy Policy - Wake Up, Get Up">
+  <link slot="favicon" rel="icon" type="image/png" href={wakeupgetupIcon.src} />
+
+  <section
+    class="mb-4 flex w-full max-w-xl flex-col gap-3 border-b border-gray-100 pb-6"
+  >
+    <p class="text-sm">
+      <a href="/wakeupgetup">&larr; Go Back</a>
+    </p>
+  </section>
+
+  <section class="flex w-full max-w-xl flex-col gap-4">
+    <h1 class="m-0 text-2xl font-bold tracking-tight">
+      Privacy Policy &mdash; Wake Up, Get Up
+    </h1>
+    <p class="m-0 text-xs text-gray-500">
+      Last updated: {lastUpdated.toLocaleDateString()}
+    </p>
+  </section>
+
+  <section class="flex w-full max-w-xl flex-col gap-4">
+    <p class="m-0 text-sm text-gray-600">
+      Wake Up, Get Up is designed to keep your information private. Your data is
+      stored on your device and in your Apple account via Apple&apos;s CloudKit
+      (iCloud) service so it can be synced and backed up across your own
+      devices.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      The developer of Wake Up, Get Up does not operate any servers for this app
+      and does not have access to, see, or collect your logs or any other
+      personal data from the app. Your entries remain under your control in your
+      iCloud account.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      Wake Up, Get Up does not include analytics, advertising SDKs, or other
+      third-party tracking tools. Your data is not sold or shared with third
+      parties. Use of iCloud and other Apple services is governed by
+      Apple&apos;s own terms and privacy policy.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      If you have any questions about this privacy policy, you can reach out to
+      the developer via <a
+        href={generateMailToLink(
+          `Question About Privacy Policy for Wake Up, Get Up - ${lastUpdated.toLocaleDateString()}`,
+          "I have a question about the privacy policy for Wake Up, Get Up.\n\n{Replace this line with your question.}",
+        )}>email</a
+      >.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      This policy may be updated over time; the date above will always show the
+      latest version.
+    </p>
+  </section>
+</Layout>

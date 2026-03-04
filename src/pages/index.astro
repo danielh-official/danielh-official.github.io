@@ -1,74 +1,84 @@
 ---
-import "../styles/global.css";
-import githubIcon from "../assets/github.svg";
-import linkedinIcon from "../assets/linkedin.svg";
-import xIcon from "../assets/x.svg";
-import {Image} from "astro:assets";
-
-const links = [
-    {label: "danielh-official", href: "https://github.com/danielh-official", color: "#24292e", icon: githubIcon, alt: "github.com/danielh-official"},
-    {label: "danielh0", href: "https://www.linkedin.com/in/danielh0/", color: "#0A66C2", icon: linkedinIcon, alt: "linkedin.com/in/danielh0"},
-    {label: "danielhaven0", href: "https://x.com/danielhaven0", color: "#000000", icon: xIcon, alt: "x.com/danielhaven0"},
-];
+import "@/styles/global.css";
+import githubIcon from "@/assets/github.svg";
+import linkedinIcon from "@/assets/linkedin.svg";
+import xIcon from "@/assets/x.svg";
+import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
+import { Image } from "astro:assets";
+import Layout from "@/layouts/MainLayout.astro";
+import Link from "@/components/HomeLink.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="description" content="Daniel Haven's personal website" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Daniel Haven</title>
-    </head>
-    <body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
-        <main class="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-12 max-[380px]:px-4 max-[380px]:py-8">
-            <article class="flex flex-col items-center gap-10">
-                <header class="flex flex-col items-center gap-3 text-center">
-                    <Image
-                        class="h-24 w-24 rounded-full border-2 border-gray-200 object-cover"
-                        src="https://avatars.githubusercontent.com/u/49914607?v=4"
-                        alt="GitHub profile"
-                        width="96"
-                        height="96"
-                    />
-                    <h1 class="m-0 text-2xl font-bold leading-tight tracking-tight">Daniel Haven</h1>
-                    <p class="m-0 text-sm text-gray-500">Full Stack Web Dev</p>
-                </header>
+<Layout>
+  <header class="flex flex-col items-center gap-3 text-center">
+    <Image
+      class="h-24 w-24 rounded-full border-2 border-gray-200 object-cover"
+      src="https://avatars.githubusercontent.com/u/49914607?v=4"
+      alt="GitHub profile"
+      width="96"
+      height="96"
+    />
+    <h1 class="m-0 text-2xl leading-tight font-bold tracking-tight">
+      Daniel Haven
+    </h1>
+    <p class="m-0 text-sm text-gray-500">Full Stack Web Dev</p>
+  </header>
 
-                <section class="flex flex-col gap-3 lg:w-96 w-full text-center">
-                    <h2 class="text-lg font-bold">About Me</h2>
-                    <p class="text-sm text-gray-500">
-                        I am a full stack web developer with a passion for building web applications that are both functional and aesthetically pleasing.
-                    </p>
-                </section>
+  <section class="flex w-full flex-col gap-3 text-center lg:w-96">
+    <h2 class="text-lg font-bold">About Me</h2>
+    <p class="text-sm text-gray-500">
+      I am a full stack web developer with a passion for building web
+      applications that are both functional and aesthetically pleasing.
+    </p>
+  </section>
 
-                <section class="flex flex-col gap-3 lg:w-96 w-full">
-                    <h2 class="text-lg font-bold">Links</h2>
+  <section class="flex w-full flex-col gap-3 lg:w-96">
+    <h2 class="text-lg font-bold">Links</h2>
 
-                    <div class="flex flex-col gap-3">
-                        {
-                            links.map(({label, href, color, icon, alt}) => (
-                                <a
-                                    href={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="flex items-center rounded-xl border px-4 py-3.5 min-h-[44px] text-sm font-medium no-underline shadow-sm transition hover:opacity-50 w-full max-w-sm sm:max-w-md lg:w-96 lg:gap-0 gap-10"
-                                    style={`border-color: ${color};`}
-                                >
-                                    <span style={`color: ${color};`}>
-                                        <Image src={icon} alt={alt} width={32} height={32} />
-                                    </span>
-                                    <span class="flex flex-1 justify-center font-semibold pr-8" style="color: black;">
-                                        {label}
-                                    </span>
-                                </a>
-                            ))
-                        }
-                    </div>
-                </section>
-            </article>
-        </main>
-    </body>
-</html>
+    <div class="flex flex-col gap-3">
+      <Link
+        href="https://github.com/danielh-official"
+        color="#24292e"
+        icon={githubIcon}
+        alt="GitHub"
+        label="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+      <Link
+        href="https://www.linkedin.com/in/danielh0/"
+        color="#0A66C2"
+        icon={linkedinIcon}
+        alt="LinkedIn"
+        label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+      <Link
+        href="https://x.com/danielhaven0"
+        color="#000000"
+        icon={xIcon}
+        alt="X"
+        label="X"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  </section>
+
+  <section class="flex w-full flex-col gap-3 lg:w-96">
+    <h2 class="text-lg font-bold">Apps</h2>
+    <p class="text-sm text-gray-500">
+      Here are some of the apps I've worked on.
+    </p>
+    <Link
+      href="/wakeupgetup"
+      color="#24292e"
+      icon={wakeupgetupIcon}
+      alt="Wake Up, Get Up"
+      label="Wake Up, Get Up"
+      target="_blank"
+      rel="noopener noreferrer"
+    />
+  </section>
+</Layout>

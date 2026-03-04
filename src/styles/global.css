@@ -5,3 +5,7 @@
     @apply text-blue-600 no-underline hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600;
   }
 }
+
+.list-circle {
+  list-style-type: circle;
+}
