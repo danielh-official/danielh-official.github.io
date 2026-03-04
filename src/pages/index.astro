@@ -37,26 +37,37 @@ const links = [
                     <p class="m-0 text-sm text-gray-500">Full Stack Web Dev</p>
                 </header>
 
-                <div class="flex flex-col gap-3">
-                    {
-                        links.map(({label, href, color, icon, alt}) => (
-                            <a
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="flex items-center rounded-xl border px-4 py-3.5 min-h-[44px] text-sm font-medium no-underline shadow-sm transition hover:opacity-50 w-full max-w-sm sm:max-w-md lg:w-96 lg:gap-0 gap-10"
-                                style={`border-color: ${color};`}
-                            >
-                                <span style={`color: ${color};`}>
-                                    <Image src={icon} alt={alt} width={32} height={32} />
-                                </span>
-                                <span class="flex flex-1 justify-center font-semibold pr-8" style="color: black;">
-                                    {label}
-                                </span>
-                            </a>
-                        ))
-                    }
-                </div>
+                <section class="flex flex-col gap-3 lg:w-96 w-full text-center">
+                    <h2 class="text-lg font-bold">About Me</h2>
+                    <p class="text-sm text-gray-500">
+                        I am a full stack web developer with a passion for building web applications that are both functional and aesthetically pleasing.
+                    </p>
+                </section>
+
+                <section class="flex flex-col gap-3 lg:w-96 w-full">
+                    <h2 class="text-lg font-bold">Links</h2>
+
+                    <div class="flex flex-col gap-3">
+                        {
+                            links.map(({label, href, color, icon, alt}) => (
+                                <a
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex items-center rounded-xl border px-4 py-3.5 min-h-[44px] text-sm font-medium no-underline shadow-sm transition hover:opacity-50 w-full max-w-sm sm:max-w-md lg:w-96 lg:gap-0 gap-10"
+                                    style={`border-color: ${color};`}
+                                >
+                                    <span style={`color: ${color};`}>
+                                        <Image src={icon} alt={alt} width={32} height={32} />
+                                    </span>
+                                    <span class="flex flex-1 justify-center font-semibold pr-8" style="color: black;">
+                                        {label}
+                                    </span>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </section>
             </article>
         </main>
     </body>
