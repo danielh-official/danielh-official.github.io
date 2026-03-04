@@ -83,37 +83,78 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
   <section class="mt-8 flex w-full flex-col gap-4">
     <h2 class="text-center text-lg font-bold sm:text-left">Screenshots</h2>
 
-    <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-4">
-      <ScreenshotFrame
-        src={ContentView9Days.src}
-        alt="Content View - 9 Days"
-        width={ContentView9Days.width}
-        height={ContentView9Days.height}
-        caption="Home screen - add log for today and view charts"
-      />
-      <ScreenshotFrame
-        src={HistoryView9Days.src}
-        alt="History View - 9 Days"
-        width={HistoryView9Days.width}
-        height={HistoryView9Days.height}
-        caption="History screen - view all your logs"
-      />
-      <ScreenshotFrame
-        src={AddLog.src}
-        alt="Add Log"
-        width={AddLog.width}
-        height={AddLog.height}
-        caption="Add Log screen - simply add wake up and get up times and optionally add a note"
-      />
-      <ScreenshotFrame
-        src={SettingsView.src}
-        alt="Settings View"
-        width={SettingsView.width}
-        height={SettingsView.height}
-        caption="Settings screen - configure a daily reminder to log your wake up and get up times"
-      />
+    <div
+      class="screenshot-carousel flex w-full flex-nowrap items-stretch gap-4 overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-4 sm:flex-none sm:overflow-visible [-webkit-overflow-scrolling:touch]"
+    >
+      <div class="screenshot-card shrink-0 snap-start sm:min-w-0">
+        <ScreenshotFrame
+          src={ContentView9Days.src}
+          alt="Content View - 9 Days"
+          width={ContentView9Days.width}
+          height={ContentView9Days.height}
+          caption="Home screen - add log for today and view charts"
+        />
+      </div>
+      <div class="screenshot-card shrink-0 snap-start sm:min-w-0">
+        <ScreenshotFrame
+          src={HistoryView9Days.src}
+          alt="History View - 9 Days"
+          width={HistoryView9Days.width}
+          height={HistoryView9Days.height}
+          caption="History screen - view all your logs"
+        />
+      </div>
+      <div class="screenshot-card shrink-0 snap-start sm:min-w-0">
+        <ScreenshotFrame
+          src={AddLog.src}
+          alt="Add Log"
+          width={AddLog.width}
+          height={AddLog.height}
+          caption="Add Log screen - simply add wake up and get up times and optionally add a note"
+        />
+      </div>
+      <div class="screenshot-card shrink-0 snap-start sm:min-w-0">
+        <ScreenshotFrame
+          src={SettingsView.src}
+          alt="Settings View"
+          width={SettingsView.width}
+          height={SettingsView.height}
+          caption="Settings screen - configure a daily reminder to log your wake up and get up times"
+        />
+      </div>
     </div>
   </section>
+
+  <style>
+    @media (max-width: 639px) {
+      :global(.screenshot-carousel) {
+        max-height: 65vh;
+      }
+      :global(.screenshot-card) {
+        max-height: 65vh;
+        width: calc(65vh * 9 / 19);
+        min-width: calc(65vh * 9 / 19);
+        display: flex;
+      }
+      :global(.screenshot-carousel .screenshot-frame) {
+        height: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      :global(.screenshot-carousel .screenshot-frame__image) {
+        flex: 1;
+        min-height: 0;
+        aspect-ratio: unset;
+      }
+      :global(.screenshot-carousel .screenshot-frame__image img) {
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  </style>
 
   <section
     class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
