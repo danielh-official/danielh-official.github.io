@@ -28,4 +28,10 @@ Or use Docker Compose:
 docker compose up --build
 ```
 
+For automatic rebuilds when you change code, use Watch mode (requires Docker Compose v2.22+):
+
+```sh
+docker compose watch
+```
+
 The site is available at `http://localhost:8080`.
