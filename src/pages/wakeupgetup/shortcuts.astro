@@ -1,0 +1,94 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
+
+const shortcuts = [
+  {
+    href: "https://www.icloud.com/shortcuts/a57ee9ce836d414f84f93d0bb4da0498",
+    label: "Last 7 Days Comparison",
+    description:
+      "Compare the average duration of your wake up and get up times for the current last 7 days to the previous last 7 days.",
+    backgroundColor: "#b8a070",
+  },
+  {
+    href: "https://www.icloud.com/shortcuts/548e81f252ef4060a879b98789f10cf2",
+    label: "Add Log For Date",
+    description: "Add a new log or update an existing log for a given date.",
+    backgroundColor: "#3498db",
+  },
+  {
+    href: "https://www.icloud.com/shortcuts/cd6f3f74361e4b02b5b3a44c17449709",
+    label: "Export JSON to Apple Notes",
+    description:
+      "Export the JSON data to Apple Notes, including the date, wake up time, get up time, and notes.",
+    backgroundColor: "#27ae60",
+  },
+];
+---
+
+<Layout title="Apple Shortcut Examples - Wake Up, Get Up">
+  <link slot="favicon" rel="icon" type="image/png" href={wakeupgetupIcon.src} />
+
+  <section class="flex w-full max-w-xl flex-col items-center gap-8">
+    <a
+      href="/wakeupgetup"
+      class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+    >
+      &larr; Return to Wake Up, Get Up
+    </a>
+  </section>
+
+  <section class="flex w-full max-w-xl flex-col items-center gap-8">
+    <h1 class="m-0 text-2xl font-bold tracking-tight">
+      Apple Shortcut Examples - Wake Up, Get Up
+    </h1>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        shortcuts.map((shortcut) => (
+          <div>
+            <a
+              class="group flex w-[250px] items-center justify-center text-inherit no-underline hover:text-inherit hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+              href={shortcut.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span
+                class="flex h-36 w-[250px] flex-col items-center gap-6 rounded-xl px-4 py-3.5 transition-[filter] duration-150 ease-out group-hover:filter-[brightness(1.08)]"
+                style={`background-color: ${shortcut.backgroundColor};`}
+              >
+                <span
+                  class="col-start-3 row-start-1 flex self-end justify-self-end text-white"
+                  aria-hidden="true"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </span>
+                <span class="col-start-2 row-start-1 text-base leading-snug font-medium text-white">
+                  {shortcut.label}
+                </span>
+              </span>
+            </a>
+            {shortcut.description && (
+              <p class="mt-2 w-[250px] text-center text-sm leading-normal text-gray-500">
+                {shortcut.description}
+              </p>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
