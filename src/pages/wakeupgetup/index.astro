@@ -33,7 +33,7 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     </div>
 
     <div
-      class="flex w-full items-center justify-center gap-3 sm:w-auto flex-row"
+      class="flex w-full flex-row items-center justify-center gap-3 sm:w-auto"
     >
       <a
         href="https://testflight.apple.com/join/yRsNBrum"
@@ -43,12 +43,6 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
       >
         Join TestFlight
       </a>
-      <div class="flex w-full justify-center gap-3 sm:w-auto">
-        <span class="text-sm text-gray-300" aria-hidden="true">•</span>
-        <a href="/wakeupgetup/privacy" class="text-sm text-gray-600">
-          Privacy Policy
-        </a>
-      </div>
     </div>
   </section>
 
@@ -153,16 +147,28 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     }
   </style>
 
+  <section class="mt-10 flex w-full max-w-xl flex-col gap-3">
+    <h2 class="text-center text-lg font-bold sm:text-left">More Information</h2>
+    <div class="text-sm text-gray-600">
+      To learn how "<b>Wake Up, Get Up</b>" uses your data, check out the <a
+        href="/wakeupgetup/privacy"
+        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >app's privacy policy</a
+      >.
+    </div>
+  </section>
+
   <section
-    class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
+    class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
   >
     <h2 class="text-center text-lg font-bold sm:text-left">
-      About the developer
+      About Daniel Haven, the developer
     </h2>
     <p class="text-sm text-gray-600">
       Wake Up, Get Up is currently being built and maintained by one person.
     </p>
-    <div class="flex flex-wrap items-center gap-3 text-sm">
+    <p class="text-center text-2xl">👋🏻</p>
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm">
       Find me on:
       <a
         href="https://github.com/danielh-official"
@@ -179,6 +185,8 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
       >
         X (Twitter)
       </a>
+      <span class="text-gray-300" aria-hidden="true">•</span>
+      <a href="/" target="_blank" rel="noopener noreferrer"> My Website </a>
     </div>
   </section>
 </Layout>
