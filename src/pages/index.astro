@@ -3,7 +3,6 @@ import "@/styles/global.css";
 import githubIcon from "@/assets/github.svg";
 import linkedinIcon from "@/assets/linkedin.svg";
 import xIcon from "@/assets/x.svg";
-import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
 import { Image } from "astro:assets";
 import Layout from "@/layouts/MainLayout.astro";
 import Link from "@/components/HomeLink.astro";
@@ -21,16 +20,7 @@ import Link from "@/components/HomeLink.astro";
     <h1 class="m-0 text-2xl leading-tight font-bold tracking-tight">
       Daniel Haven
     </h1>
-    <p class="m-0 text-sm text-gray-500">Full Stack Web Dev</p>
   </header>
-
-  <section class="flex w-full flex-col gap-3 text-center lg:w-96">
-    <h2 class="text-lg font-bold">About Me</h2>
-    <p class="text-sm text-gray-500">
-      I am a full stack web developer with a passion for building web
-      applications that are both functional and aesthetically pleasing.
-    </p>
-  </section>
 
   <section class="flex w-full flex-col gap-3 lg:w-96">
     <h2 class="text-lg font-bold">Links</h2>
@@ -64,21 +54,5 @@ import Link from "@/components/HomeLink.astro";
         rel="noopener noreferrer"
       />
     </div>
-  </section>
-
-  <section class="flex w-full flex-col gap-3 lg:w-96">
-    <h2 class="text-lg font-bold">Apps</h2>
-    <p class="text-sm text-gray-500">
-      Here are some of the apps I've worked on.
-    </p>
-    <Link
-      href="/wakeupgetup"
-      color="#24292e"
-      icon={wakeupgetupIcon}
-      alt="Wake Up, Get Up"
-      label="Wake Up, Get Up"
-      target="_blank"
-      rel="noopener noreferrer"
-    />
   </section>
 </Layout>
