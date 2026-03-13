@@ -11,7 +11,10 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
 <Layout title="Wake Up, Get Up">
   <link slot="favicon" rel="icon" type="image/png" href={wakeupgetupIcon.src} />
 
-  <section class="flex w-full max-w-xl flex-col items-center gap-6 text-center" aria-labelledby="wugu-heading">
+  <section
+    class="flex w-full max-w-xl flex-col items-center gap-6 text-center"
+    aria-labelledby="wugu-heading"
+  >
     <div class="flex flex-col items-center gap-4">
       <img
         src={wakeupgetupIcon.src}
@@ -20,7 +23,9 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
         loading="lazy"
       />
       <div class="space-y-2">
-        <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">Wake Up, Get Up</h1>
+        <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">
+          Wake Up, Get Up
+        </h1>
         <p class="m-0 text-sm text-gray-600">
           Track the time between waking up and actually getting out of bed.
         </p>
@@ -51,24 +56,33 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     </div>
   </section>
 
-  <section class="mt-10 flex w-full max-w-xl flex-col gap-4" aria-labelledby="features-heading">
-    <h2 id="features-heading" class="text-center text-lg font-bold sm:text-left">Features</h2>
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-4"
+    aria-labelledby="features-heading"
+  >
+    <h2
+      id="features-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      Features
+    </h2>
     <ul class="list-inside list-disc space-y-3 text-sm text-gray-600">
       <li>
-        <strong>Simple Entry</strong> &mdash; Log when you <span class="font-medium"
-          >wake up</span
+        <strong>Simple Entry</strong> &mdash; Log when you <span
+          class="font-medium">wake up</span
         > and when you <span class="font-medium">get out of bed</span>.
       </li>
       <li>
-        <strong>Charts</strong> &mdash; See the last 7 days average of your duration in bed
-        as well as a 7-day chart.
+        <strong>Charts</strong> &mdash; See the last 7 days average of your duration
+        in bed as well as a 7-day chart.
       </li>
       <li>
-        <strong>Notifications</strong> &mdash; Set a daily reminder to log your wake-up and
-        get-up times.
+        <strong>Notifications</strong> &mdash; Set a daily reminder to log your wake-up
+        and get-up times.
       </li>
       <li>
-        <strong>Apple Shortcuts Actions</strong> &mdash; Extend Wake Up, Get Up's functionality
+        <strong>Apple Shortcuts Actions</strong> &mdash; Extend Wake Up, Get Up's
+        functionality
         <ul class="list-circle ml-5 list-inside pt-3 text-sm text-gray-600">
           <li>Add Log &mdash; Add a new log for a given date.</li>
           <li>Update Log &mdash; Update a log for a given date.</li>
@@ -87,8 +101,16 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     </div>
   </section>
 
-  <section class="mt-8 flex w-full flex-col gap-4" aria-labelledby="screenshots-heading">
-    <h2 id="screenshots-heading" class="text-center text-lg font-bold sm:text-left">Screenshots</h2>
+  <section
+    class="mt-8 flex w-full flex-col gap-4"
+    aria-labelledby="screenshots-heading"
+  >
+    <h2
+      id="screenshots-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      Screenshots
+    </h2>
 
     <div
       role="region"
@@ -154,8 +176,16 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     }
   </style>
 
-  <section class="mt-10 flex w-full max-w-xl flex-col gap-3" aria-labelledby="more-info-heading">
-    <h2 id="more-info-heading" class="text-center text-lg font-bold sm:text-left">More Information</h2>
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-3"
+    aria-labelledby="more-info-heading"
+  >
+    <h2
+      id="more-info-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      More Information
+    </h2>
     <div class="text-sm text-gray-600">
       To learn how "<b>Wake Up, Get Up</b>" uses your data, check out the <a
         href="/wakeupgetup/privacy"
