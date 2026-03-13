@@ -13,7 +13,7 @@ import Link from "@/components/HomeLink.astro";
     <Image
       class="h-24 w-24 rounded-full border-2 border-gray-200 object-cover"
       src="https://avatars.githubusercontent.com/u/49914607?v=4"
-      alt="GitHub profile"
+      alt="Daniel Haven's profile photo"
       width="96"
       height="96"
     />
@@ -22,8 +22,8 @@ import Link from "@/components/HomeLink.astro";
     </h1>
   </header>
 
-  <section class="flex w-full flex-col gap-3 lg:w-96">
-    <h2 class="text-lg font-bold">Links</h2>
+  <section class="flex w-full flex-col gap-3 lg:w-96" aria-labelledby="links-heading">
+    <h2 id="links-heading" class="text-lg font-bold">Links</h2>
 
     <div class="flex flex-col gap-3">
       <Link

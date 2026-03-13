@@ -11,7 +11,7 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
 <Layout title="Wake Up, Get Up">
   <link slot="favicon" rel="icon" type="image/png" href={wakeupgetupIcon.src} />
 
-  <section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
+  <section class="flex w-full max-w-xl flex-col items-center gap-6 text-center" aria-labelledby="wugu-heading">
     <div class="flex flex-col items-center gap-4">
       <img
         src={wakeupgetupIcon.src}
@@ -20,7 +20,7 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
         loading="lazy"
       />
       <div class="space-y-2">
-        <h1 class="m-0 text-2xl font-bold tracking-tight">Wake Up, Get Up</h1>
+        <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">Wake Up, Get Up</h1>
         <p class="m-0 text-sm text-gray-600">
           Track the time between waking up and actually getting out of bed.
         </p>
@@ -39,7 +39,8 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
         href="https://apps.apple.com/us/app/wake-up-get-up/id6758530375?itscg=30200&itsct=apps_box_badge&mttnsubad=6758530375"
         style="display: inline-block;"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
+        aria-label="Download Wake Up, Get Up on the App Store (opens in new tab)"
       >
         <img
           src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1773187200"
@@ -50,24 +51,24 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     </div>
   </section>
 
-  <section class="mt-10 flex w-full max-w-xl flex-col gap-4">
-    <h2 class="text-center text-lg font-bold sm:text-left">Features</h2>
+  <section class="mt-10 flex w-full max-w-xl flex-col gap-4" aria-labelledby="features-heading">
+    <h2 id="features-heading" class="text-center text-lg font-bold sm:text-left">Features</h2>
     <ul class="list-inside list-disc space-y-3 text-sm text-gray-600">
       <li>
-        <b>Simple Entry</b> &mdash; Log when you <span class="font-medium"
+        <strong>Simple Entry</strong> &mdash; Log when you <span class="font-medium"
           >wake up</span
         > and when you <span class="font-medium">get out of bed</span>.
       </li>
       <li>
-        <b>Charts</b> &mdash; See the last 7 days average of your duration in bed
+        <strong>Charts</strong> &mdash; See the last 7 days average of your duration in bed
         as well as a 7-day chart.
       </li>
       <li>
-        <b>Notifications</b> &mdash; Set a daily reminder to log your wake-up and
+        <strong>Notifications</strong> &mdash; Set a daily reminder to log your wake-up and
         get-up times.
       </li>
       <li>
-        <b>Apple Shortcuts Actions</b> &mdash; Extend Wake Up, Get Up's functionality
+        <strong>Apple Shortcuts Actions</strong> &mdash; Extend Wake Up, Get Up's functionality
         <ul class="list-circle ml-5 list-inside pt-3 text-sm text-gray-600">
           <li>Add Log &mdash; Add a new log for a given date.</li>
           <li>Update Log &mdash; Update a log for a given date.</li>
@@ -86,10 +87,12 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     </div>
   </section>
 
-  <section class="mt-8 flex w-full flex-col gap-4">
-    <h2 class="text-center text-lg font-bold sm:text-left">Screenshots</h2>
+  <section class="mt-8 flex w-full flex-col gap-4" aria-labelledby="screenshots-heading">
+    <h2 id="screenshots-heading" class="text-center text-lg font-bold sm:text-left">Screenshots</h2>
 
     <div
+      role="region"
+      aria-label="App screenshots"
       class="screenshot-carousel flex w-full snap-x snap-mandatory flex-nowrap items-stretch gap-4 overflow-x-auto [-webkit-overflow-scrolling:touch] sm:grid sm:flex-none sm:grid-cols-4 sm:overflow-visible"
     >
       <div class="screenshot-card shrink-0 snap-start sm:min-w-0">
@@ -151,8 +154,8 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     }
   </style>
 
-  <section class="mt-10 flex w-full max-w-xl flex-col gap-3">
-    <h2 class="text-center text-lg font-bold sm:text-left">More Information</h2>
+  <section class="mt-10 flex w-full max-w-xl flex-col gap-3" aria-labelledby="more-info-heading">
+    <h2 id="more-info-heading" class="text-center text-lg font-bold sm:text-left">More Information</h2>
     <div class="text-sm text-gray-600">
       To learn how "<b>Wake Up, Get Up</b>" uses your data, check out the <a
         href="/wakeupgetup/privacy"
@@ -164,14 +167,15 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
 
   <section
     class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
+    aria-labelledby="about-heading"
   >
-    <h2 class="text-center text-lg font-bold sm:text-left">
+    <h2 id="about-heading" class="text-center text-lg font-bold sm:text-left">
       About Daniel Haven, the developer
     </h2>
     <p class="text-sm text-gray-600">
       Wake Up, Get Up is currently being built and maintained by one person.
     </p>
-    <p class="text-center text-2xl">👋🏻</p>
+    <p class="text-center text-2xl" aria-hidden="true">👋🏻</p>
     <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm">
       Find me on:
       <a

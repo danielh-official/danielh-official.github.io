@@ -34,12 +34,12 @@ const shortcuts = [
       href="/wakeupgetup"
       class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
     >
-      &larr; Return to Wake Up, Get Up
+      <span aria-hidden="true">&larr;</span> Return to Wake Up, Get Up
     </a>
   </section>
 
-  <section class="flex w-full max-w-xl flex-col items-center gap-8">
-    <h1 class="m-0 text-2xl font-bold tracking-tight">
+  <section class="flex w-full max-w-xl flex-col items-center gap-8" aria-labelledby="shortcuts-heading">
+    <h1 id="shortcuts-heading" class="m-0 text-2xl font-bold tracking-tight">
       Apple Shortcut Examples - Wake Up, Get Up
     </h1>
     <div class="grid gap-4 sm:grid-cols-2">
@@ -51,6 +51,7 @@ const shortcuts = [
               href={shortcut.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${shortcut.label} (opens in new tab)`}
             >
               <span
                 class="flex h-36 w-[250px] flex-col items-center gap-6 rounded-xl px-4 py-3.5 transition-[filter] duration-150 ease-out group-hover:filter-[brightness(1.08)]"
