@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
-const { src, alt, width, height, caption } = Astro.props;
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption: string;
+}
+
+const { src, alt, caption } = Astro.props;
 ---
 
 <figure
@@ -13,8 +20,6 @@ const { src, alt, width, height, caption } = Astro.props;
     <Image
       src={src}
       alt={alt}
-      width={width}
-      height={height}
       class="rounded-3xl"
     />
   </div>
