@@ -11,9 +11,13 @@ const { href, color, icon, alt, label, target, rel } = Astro.props;
   class="flex min-h-[44px] w-full max-w-sm items-center gap-10 rounded-xl border px-4 py-3.5 text-sm font-medium no-underline shadow-sm transition hover:opacity-50 sm:max-w-md lg:w-96 lg:gap-0"
   style={`border-color: ${color};`}
 >
-  <span style={`color: ${color};`}>
-    <Image src={icon} alt="" width={32} height={32} />
-  </span>
+  {
+    icon && (
+      <span style={`color: ${color};`}>
+        <Image src={icon} alt={alt} width={32} height={32} />
+      </span>
+    )
+  }
   <span
     class="flex flex-1 justify-center pr-8 font-semibold"
     style={`color: ${color}`}
