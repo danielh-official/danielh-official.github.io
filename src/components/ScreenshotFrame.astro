@@ -17,11 +17,7 @@ const { src, alt, caption } = Astro.props;
   <div
     class="screenshot-frame__image flex aspect-9/19 w-full items-center justify-center rounded-3xl bg-gray-50 text-xs text-gray-400"
   >
-    <Image
-      src={src}
-      alt={alt}
-      class="rounded-3xl"
-    />
+    <Image src={src} alt={alt} class="rounded-3xl" />
   </div>
   <figcaption class="text-xs text-gray-600">{caption}</figcaption>
 </figure>
