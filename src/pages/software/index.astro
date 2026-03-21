@@ -1,0 +1,249 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+
+interface Project {
+  name: string;
+  description: string;
+  category: string;
+  url: string;
+  status: string;
+  lastUpdated: Date;
+}
+
+const projects: Project[] = [
+  {
+    name: "Some Extra Things",
+    description: "A desktop app that syncs with Things 3 (Cultured Code) and offers additional features.",
+    category: "Mac Desktop App",
+    url: "https://github.com/danielh-official/some-extra-things",
+    status: "Building",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "Wake Up, Get Up",
+    description:
+      "Track the time between waking up and actually getting out of bed.",
+    category: "iPhone App",
+    url: "/wakeupgetup",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "YNAB API Docs",
+    description: "A scraper and web app for YNAB's API docuemntation that adds statistical insights for libraries and integrations.",
+    category: "YNAB-Related Web App",
+    url: "https://danielhaven.com/ynabapidocs",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "Bills (For YNAB)",
+    description: "A web app for tracking bills (recurring expenses) with YNAB.",
+    category: "YNAB-Related Web App",
+    url: "https://github.com/danielh-official/billsforynab",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "Streaks (For YNAB)",
+    description: "A web app for tracking spending habits with YNAB.",
+    category: "YNAB-Related Web App",
+    url: "https://github.com/danielh-official/billsforynab",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "1-click block redditors",
+    description: "Block a Redditor the exact moment you see his or her hot take.",
+    category: "Chrome Extension",
+    url: "https://chromewebstore.google.com/detail/1-click-block-redditors/gnafilgmiflpdmgdoondecomfikbanda?hl=en",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+  {
+    name: "Hide Rumble Thumbnails",
+    description: "Block distracting, clickbaity thumbnails on Rumble.",
+    category: "Chrome Extension",
+    url: "https://chromewebstore.google.com/detail/hide-rumble-thumbnails/dfmdfkeldajmnkngihdambfpmjfhhbmc",
+    status: "Actively Maintained",
+    lastUpdated: new Date(2026, 2, 21, 12),
+  },
+];
+
+const categories = ["All", ...new Set(projects.map((p) => p.category))];
+
+const categoryCounts: Record<string, number> = { All: projects.length };
+for (const p of projects) {
+  categoryCounts[p.category] = (categoryCounts[p.category] ?? 0) + 1;
+}
+
+function getRelativeTimeString(
+  date: Date | number,
+  lang = navigator.language,
+): string {
+  const deltaSeconds = Math.round(
+    (new Date(date).getTime() - Date.now()) / 1000,
+  );
+  const cutoffs = [
+    60,
+    3600,
+    86400,
+    86400 * 7,
+    86400 * 30,
+    86400 * 365,
+    Infinity,
+  ];
+  const units: Intl.RelativeTimeFormatUnit[] = [
+    "second",
+    "minute",
+    "hour",
+    "day",
+    "week",
+    "month",
+    "year",
+  ];
+  const unitIndex = cutoffs.findIndex(
+    (cutoff) => cutoff > Math.abs(deltaSeconds),
+  );
+  const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
+
+  const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
+  return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
+}
+---
+
+<Layout title="Software — Daniel Haven">
+  <div>
+    <a href="/">&larr; Return to Home Page</a>
+  </div>
+
+  <header class="flex flex-col items-center gap-2 text-center">
+    <h1 class="m-0 text-2xl font-bold tracking-tight">Software</h1>
+    <p class="m-0 text-sm text-gray-500">Things I've built or am building.</p>
+  </header>
+
+  <!-- Category filter: hidden until JS runs -->
+  <div
+    id="category-filter"
+    class="hidden flex-wrap justify-center gap-2"
+    role="group"
+    aria-label="Filter by category"
+  >
+    {
+      categories.map((cat) => (
+        <button
+          data-filter={cat}
+          class:list={[
+            "filter-btn cursor-pointer rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600",
+            cat === "All"
+              ? "border-blue-600 bg-blue-600 text-white"
+              : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50",
+          ]}
+          aria-pressed={cat === "All" ? "true" : "false"}
+        >
+          {cat} ({categoryCounts[cat]})
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Grid -->
+  <div
+    id="project-grid"
+    class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+  >
+    {
+      projects.map((project) => (
+        <article
+          data-category={project.category}
+          class="project-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+        >
+          <div class="flex items-start justify-between gap-2">
+            <h2 class="m-0 text-base leading-snug font-semibold">
+              {project.name}
+            </h2>
+            {
+              <span class="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500">
+                {project.status}
+              </span>
+            }
+          </div>
+          <div class="text-sm text-gray-400">{project.category}</div>
+
+          <p class="m-0 grow text-sm text-gray-600">{project.description}</p>
+
+          <a
+            href={project.url}
+            class="mt-auto inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            aria-label={`View ${project.name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View project
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+
+          <div class="text-end text-sm text-gray-400">
+            Status Last Updated: {getRelativeTimeString(project.lastUpdated)}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <!-- Empty state -->
+  <p id="empty-state" class="hidden text-sm text-gray-400">
+    No projects in this category yet.
+  </p>
+</Layout>
+
+<script>
+  const filterEl = document.getElementById("category-filter")!;
+  filterEl.classList.remove("hidden");
+  filterEl.classList.add("flex");
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".project-card");
+  const emptyState = document.getElementById("empty-state")!;
+
+  function applyFilter(selected: string) {
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const match = selected === "All" || card.dataset.category === selected;
+      card.hidden = !match;
+      if (match) visible++;
+    });
+
+    emptyState.classList.toggle("hidden", visible > 0);
+
+    buttons.forEach((btn) => {
+      const active = btn.dataset.filter === selected;
+      btn.classList.toggle("bg-blue-600", active);
+      btn.classList.toggle("text-white", active);
+      btn.classList.toggle("border-blue-600", active);
+      btn.classList.toggle("bg-white", !active);
+      btn.classList.toggle("text-gray-600", !active);
+      btn.classList.toggle("border-gray-200", !active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => applyFilter(btn.dataset.filter!));
+  });
+</script>
