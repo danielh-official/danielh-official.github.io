@@ -1,7 +1,11 @@
 ---
 import Layout from "@/layouts/MainLayout.astro";
+import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
+import { Image } from "astro:assets";
+import redditQuickBlockIcon from "@/assets/reddit-quick-block/icon.png";
 
 interface Project {
+  icon?: any;
   name: string;
   description: string;
   category: string;
@@ -12,14 +16,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    icon: "https://raw.githubusercontent.com/danielh-official/some-extra-things/refs/heads/main/public/icon.png",
     name: "Some Extra Things",
-    description: "A desktop app that syncs with Things 3 (Cultured Code) and offers additional features.",
+    description:
+      "A desktop app that syncs with Things 3 (Cultured Code) and offers additional features.",
     category: "Mac Desktop App",
     url: "https://github.com/danielh-official/some-extra-things",
     status: "Building",
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: wakeupgetupIcon,
     name: "Wake Up, Get Up",
     description:
       "Track the time between waking up and actually getting out of bed.",
@@ -29,14 +36,17 @@ const projects: Project[] = [
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: "https://danielhaven.com/ynabapidocs/_app/immutable/assets/favicon.Cr2iNLzt.png",
     name: "YNAB API Docs",
-    description: "A scraper and web app for YNAB's API docuemntation that adds statistical insights for libraries and integrations.",
+    description:
+      "A scraper and web app for YNAB's API docuemntation that adds statistical insights for libraries and integrations.",
     category: "YNAB-Related Web App",
     url: "https://danielhaven.com/ynabapidocs",
     status: "Actively Maintained",
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: "https://raw.githubusercontent.com/danielh-official/billsforynab/refs/heads/main/src/lib/assets/favicon.svg",
     name: "Bills (For YNAB)",
     description: "A web app for tracking bills (recurring expenses) with YNAB.",
     category: "YNAB-Related Web App",
@@ -45,6 +55,7 @@ const projects: Project[] = [
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: "https://raw.githubusercontent.com/danielh-official/streaksforynab/refs/heads/main/src/lib/assets/icons/favicon.png",
     name: "Streaks (For YNAB)",
     description: "A web app for tracking spending habits with YNAB.",
     category: "YNAB-Related Web App",
@@ -53,14 +64,17 @@ const projects: Project[] = [
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: redditQuickBlockIcon,
     name: "1-click block redditors",
-    description: "Block a Redditor the exact moment you see his or her hot take.",
+    description:
+      "Block a Redditor the exact moment you see his or her hot take.",
     category: "Chrome Extension",
     url: "https://chromewebstore.google.com/detail/1-click-block-redditors/gnafilgmiflpdmgdoondecomfikbanda?hl=en",
     status: "Actively Maintained",
     lastUpdated: new Date(2026, 2, 21, 12),
   },
   {
+    icon: "https://raw.githubusercontent.com/danielh-official/rumble-thumbnails-hider/refs/heads/main/public/icon/128.png",
     name: "Hide Rumble Thumbnails",
     description: "Block distracting, clickbaity thumbnails on Rumble.",
     category: "Chrome Extension",
@@ -158,6 +172,17 @@ function getRelativeTimeString(
           data-category={project.category}
           class="project-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
         >
+          {project.icon && (
+            <div>
+              <Image
+                src={project.icon}
+                alt={project.name}
+                width={50}
+                height={50}
+                class="rounded-2xl shadow-sm"
+              />
+            </div>
+          )}
           <div class="flex items-start justify-between gap-2">
             <h2 class="m-0 text-base leading-snug font-semibold">
               {project.name}
@@ -197,7 +222,7 @@ function getRelativeTimeString(
             </svg>
           </a>
 
-          <div class="text-end text-sm text-gray-400">
+          <div class="text-sm text-gray-400">
             Status Last Updated: {getRelativeTimeString(project.lastUpdated)}
           </div>
         </article>
