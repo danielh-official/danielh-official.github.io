@@ -6,6 +6,7 @@ import HistoryView9Days from "@/assets/wakeupgetup/screenshots/HistoryView9Days.
 import AddLog from "@/assets/wakeupgetup/screenshots/AddLog.png";
 import SettingsView from "@/assets/wakeupgetup/screenshots/SettingsView.png";
 import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Wake Up, Get Up">
@@ -16,8 +17,8 @@ import ScreenshotFrame from "@/components/ScreenshotFrame.astro";
     aria-labelledby="wugu-heading"
   >
     <div class="flex flex-col items-center gap-4">
-      <img
-        src={wakeupgetupIcon.src}
+      <Image
+        src={wakeupgetupIcon}
         alt="Wake Up, Get Up app icon"
         class="h-20 w-20 rounded-3xl shadow-sm"
         loading="lazy"
