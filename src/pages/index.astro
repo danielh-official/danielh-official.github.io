@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import githubIcon from "@/assets/github.svg";
 import linkedinIcon from "@/assets/linkedin.svg";
 import xIcon from "@/assets/x.svg";
+import youtubeIcon from "@/assets/youtube.svg";
 import { Image } from "astro:assets";
 import Layout from "@/layouts/MainLayout.astro";
 import Link from "@/components/HomeLink.astro";
@@ -22,11 +23,10 @@ import Link from "@/components/HomeLink.astro";
     </h1>
   </header>
 
-  <section
-    class="flex text-lg font-bold"
-    aria-labelledby="headline"
-  >
-    Comedian, Artist, Entertainer
+  <section class="flex text-lg font-bold" aria-labelledby="headline">
+    <ul>
+      <li>Software Developer & Hobbyist Artist</li>
+    </ul>
   </section>
 
   <section
@@ -60,6 +60,15 @@ import Link from "@/components/HomeLink.astro";
         icon={xIcon}
         alt="danielhaven0's X (Twitter) profile"
         label="danielhaven0 - X (Twitter)"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+      <Link
+        href="https://www.youtube.com/@danielhaven"
+        color="#CD201F"
+        icon={youtubeIcon}
+        alt="danielhaven's YouTube channel"
+        label="danielhaven - YouTube"
         target="_blank"
         rel="noopener noreferrer"
       />
