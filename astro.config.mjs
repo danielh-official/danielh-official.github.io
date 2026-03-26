@@ -20,4 +20,8 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
+
+  redirects: {
+    '/billsforynab': 'https://billsforynab.com'
+  }
 });
