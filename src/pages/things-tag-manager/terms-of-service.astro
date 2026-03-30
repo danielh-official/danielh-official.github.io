@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+
+function generateMailToLink(subject: string, body: string) {
+  return `mailto:d-haven@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+const lastUpdated = new Date("2026-03-30 12:00:00");
+---
+
+<Layout
+  title="Terms of Service - Things Tag Manager: Free and Open Source Companion App for Things 3 (Cultured Code)"
+  noFooter
+>
+  <link
+    slot="favicon"
+    rel="icon"
+    type="image/png"
+    href="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+  />
+
+  <section
+    class="mb-4 flex w-full max-w-xl flex-col gap-3 border-b border-gray-100 pb-6"
+  >
+    <p class="text-sm">
+      <a
+        href="/things-tag-manager"
+        aria-label="Go back to Things Tag Manager"
+      ><span aria-hidden="true">&larr;</span> Go Back</a>
+    </p>
+  </section>
+
+  <section
+    class="flex w-full max-w-xl flex-col gap-4"
+    aria-labelledby="tos-heading"
+  >
+    <h1 id="tos-heading" class="m-0 text-2xl font-bold tracking-tight">
+      Terms of Service &mdash; Things Tag Manager
+    </h1>
+    <p class="m-0 text-xs text-gray-500">
+      Last updated: {lastUpdated.toLocaleDateString()}
+    </p>
+  </section>
+
+  <section class="flex w-full max-w-xl flex-col gap-4">
+    <p class="m-0 text-sm text-gray-600">
+      Things Tag Manager is provided <strong>"as is"</strong>, without warranty
+      of any kind, express or implied. Use of the app is at your own risk. The
+      developer makes no guarantees regarding the accuracy, reliability, or
+      fitness of the app for any particular purpose and is not liable for any
+      damages arising from its use.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      Questions? Reach out via <a
+        href={generateMailToLink(
+          `Question About Terms of Service (Last Updated: ${lastUpdated.toLocaleDateString()}) for Things Tag Manager`,
+          "I have a question about the terms of service for Things Tag Manager.\n\n{Replace this line with your question.}",
+        )}>email</a
+      >. These terms may be updated over time; the date above will always
+      reflect the latest version.
+    </p>
+  </section>
+</Layout>
