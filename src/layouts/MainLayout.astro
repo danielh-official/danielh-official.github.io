@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-const { title } = Astro.props;
+const { title, noFooter } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,12 +30,19 @@ const { title } = Astro.props;
       <slot />
     </main>
 
-    <footer class="p-4 text-center text-sm text-gray-400">
-      &copy;2026 Daniel Haven &mdash; <a
-        href="https://github.com/danielh-official/danielh-official.github.io"
-        target="_blank"
-        rel="noopener noreferrer">GitHub Repository</a
-      >
-    </footer>
+    {
+      !noFooter && (
+        <footer class="p-4 text-center text-sm text-gray-400">
+          &copy;2026 Daniel Haven &mdash;{" "}
+          <a
+            href="https://github.com/danielh-official/danielh-official.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository
+          </a>
+        </footer>
+      )
+    }
   </body>
 </html>

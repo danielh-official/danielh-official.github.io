@@ -22,6 +22,8 @@ export default defineConfig({
   integrations: [sitemap()],
 
   redirects: {
-    '/billsforynab': 'https://billsforynab.com'
+    '/billsforynab': 'https://billsforynab.com',
+    '/thingstagmanager': '/things-tag-manager',
+    '/wakeupgetup': '/wake-up-get-up',
   }
 });

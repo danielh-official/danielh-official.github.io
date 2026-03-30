@@ -1,0 +1,70 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+
+function generateMailToLink(subject: string, body: string) {
+  return `mailto:d-haven@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+const lastUpdated = new Date("2026-03-29");
+---
+
+<Layout title="Privacy Policy - Things Tag Manager: Free and Open Source Companion App for Things 3 (Cultured Code)" noFooter>
+  <link slot="favicon" rel="icon" type="image/png" href="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png" />
+
+  <section
+    class="mb-4 flex w-full max-w-xl flex-col gap-3 border-b border-gray-100 pb-6"
+  >
+    <p class="text-sm">
+      <a href="/things-tag-manager" aria-label="Go back to Things Tag Manager"
+        ><span aria-hidden="true">&larr;</span> Go Back</a
+      >
+    </p>
+  </section>
+
+  <section
+    class="flex w-full max-w-xl flex-col gap-4"
+    aria-labelledby="privacy-heading"
+  >
+    <h1 id="privacy-heading" class="m-0 text-2xl font-bold tracking-tight">
+      Privacy Policy &mdash; Things Tag Manager
+    </h1>
+    <p class="m-0 text-xs text-gray-500">
+      Last updated: {lastUpdated.toLocaleDateString()}
+    </p>
+  </section>
+
+  <section class="flex w-full max-w-xl flex-col gap-4">
+    <p class="m-0 text-sm text-gray-600">
+      Things Tag Manager is designed to keep your information private. Any data imported from Things 3 is
+      stored on only the Mac where Things Tag Manager is installed. The app does not transmit any of your data to external servers or third parties. All processing is done locally on your Mac, and your data remains under your control at all times.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      The developer of Things Tag Manager does not operate any servers for this app
+      and does not have access to, see, or collect your logs or any other
+      personal data from the app. Your entries remain under your control in your
+      local Mac.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      Things Tag Manager does not include analytics, advertising SDKs, or other
+      third-party tracking tools. Your data is not sold or shared with third
+      parties.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      If you have any questions about this privacy policy, you can reach out to
+      the developer via <a
+        href={generateMailToLink(
+          `Question About Privacy Policy (Last Updated: ${lastUpdated.toLocaleDateString()}) for Things Tag Manager`,
+          "I have a question about the privacy policy for Things Tag Manager.\n\n{Replace this line with your question.}",
+        )}>email</a
+      >.
+    </p>
+
+    <p class="m-0 text-sm text-gray-600">
+      This policy may be updated over time; the date above will always show the
+      latest version.
+    </p>
+  </section>
+</Layout>

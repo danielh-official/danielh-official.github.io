@@ -1,0 +1,167 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="Things Tag Manager: Free and Open Source Companion App for Things 3 (Cultured Code)"
+  noFooter
+>
+  <link
+    slot="favicon"
+    rel="icon"
+    type="image/png"
+    href="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+  />
+
+  <section
+    class="flex w-full max-w-xl flex-col items-center gap-6 text-center"
+    aria-labelledby="wugu-heading"
+  >
+    <div class="flex flex-col items-center gap-4">
+      <Image
+        src="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+        alt="Things Tag Manager app icon"
+        class="h-20 w-20 rounded-3xl shadow-sm"
+        loading="lazy"
+        width="128"
+        height="128"
+      />
+      <div class="space-y-2">
+        <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">
+          Things Tag Manager
+        </h1>
+        <p class="m-0 text-sm text-gray-600">
+          A free and open-source companion app for <a
+            href="https://culturedcode.com/things/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >Things 3 (Cultured Code)</a
+          > to make managing tags easier.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex w-full flex-row items-center justify-center gap-3 sm:w-auto"
+    >
+      <a
+        href="https://testflight.apple.com/join/4yQUwvSy"
+        class="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white no-underline hover:bg-blue-700 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join TestFlight
+      </a>
+    </div>
+
+    <div class="text-sm text-gray-600">
+      <a
+        href="https://github.com/danielh-official/ThingsTagManager"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >Click here to view the GitHub repo.</a
+      >
+    </div>
+  </section>
+
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-4"
+    aria-labelledby="features-heading"
+  >
+    <h2
+      id="features-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      Features
+    </h2>
+    <ul class="list-inside list-disc space-y-3 text-sm text-gray-600">
+      <li>
+        <strong>Tags Search</strong> &mdash; Unlike Things 3's native tags management,
+        you can easily search through your tags to find ones you want to rename, delete,
+        or give a parent tag.
+      </li>
+      <li>
+        <strong>Flat List View</strong> &mdash; Whereas Things 3's native tag management
+        shows tags in a nested hierarchy, Things Tag Manager shows all your tags in
+        a flat list so you can easily see all your tags at once.
+      </li>
+      <li>
+        <strong>Two-Way Sync</strong> &mdash; Not only can you import your tags from
+        Things 3, but you can create new tags and edit or delete existing ones. Changes
+        you make in Things Tag Manager will sync back to Things 3.
+      </li>
+    </ul>
+  </section>
+
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-3"
+    aria-labelledby="more-info-heading"
+  >
+    <h2
+      id="more-info-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      More Information
+    </h2>
+    <div class="text-sm text-gray-600">
+      To learn how "<b>Things Tag Manager</b>" uses your data, check out the <a
+        href="/things-tag-manager/privacy"
+        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >app's privacy policy</a
+      >.
+    </div>
+  </section>
+
+  <!-- Statement of affiliation -->
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
+    aria-labelledby="affiliation-heading"
+  >
+    <h2
+      id="affiliation-heading"
+      class="text-center text-lg font-bold sm:text-left"
+    >
+      Statement of Affiliation
+    </h2>
+    <p class="text-sm text-gray-600">
+      Things Tag Manager is an independent application and is not affiliated
+      with Cultured Code or Things 3.
+    </p>
+  </section>
+
+  <section
+    class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
+    aria-labelledby="about-heading"
+  >
+    <h2 id="about-heading" class="text-center text-lg font-bold sm:text-left">
+      About Daniel Haven, the developer
+    </h2>
+    <p class="text-sm text-gray-600">
+      Things Tag Manager is currently being built and maintained by one person.
+    </p>
+    <p class="text-center text-2xl" aria-hidden="true">👋🏻</p>
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm">
+      Find me on:
+      <a
+        href="https://github.com/danielh-official"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+      <span class="text-gray-300" aria-hidden="true">•</span>
+      <a
+        href="https://x.com/danielhaven0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        X (Twitter)
+      </a>
+      <span class="text-gray-300" aria-hidden="true">•</span>
+      <a href="/" target="_blank" rel="noopener noreferrer"> My Website </a>
+    </div>
+  </section>
+</Layout>
