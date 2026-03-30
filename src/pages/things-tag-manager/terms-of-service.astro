@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/MainLayout.astro";
+import SoftwareProductLayout from "@/layouts/SoftwareProductLayout.astro";
 
 function generateMailToLink(subject: string, body: string) {
   return `mailto:d-haven@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -8,28 +8,12 @@ function generateMailToLink(subject: string, body: string) {
 const lastUpdated = new Date("2026-03-30 12:00:00");
 ---
 
-<Layout
+<SoftwareProductLayout
   title="Terms of Service - Things Tag Manager: Free and Open Source Companion App for Things 3 (Cultured Code)"
-  noFooter
+  favicon="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+  appName="Things Tag Manager"
+  backUrl="/things-tag-manager"
 >
-  <link
-    slot="favicon"
-    rel="icon"
-    type="image/png"
-    href="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
-  />
-
-  <section
-    class="mb-4 flex w-full max-w-xl flex-col gap-3 border-b border-gray-100 pb-6"
-  >
-    <p class="text-sm">
-      <a
-        href="/things-tag-manager"
-        aria-label="Go back to Things Tag Manager"
-      ><span aria-hidden="true">&larr;</span> Go Back</a>
-    </p>
-  </section>
-
   <section
     class="flex w-full max-w-xl flex-col gap-4"
     aria-labelledby="tos-heading"
@@ -61,4 +45,4 @@ const lastUpdated = new Date("2026-03-30 12:00:00");
       reflect the latest version.
     </p>
   </section>
-</Layout>
+</SoftwareProductLayout>

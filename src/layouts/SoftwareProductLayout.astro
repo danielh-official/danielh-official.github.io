@@ -5,100 +5,125 @@ interface Props {
   title: string;
   favicon: string;
   appName: string;
-  privacyUrl: string;
+  backUrl?: string;
+  privacyUrl?: string;
   tosUrl?: string;
   affiliationStatement?: string;
 }
 
-const { title, favicon, appName, privacyUrl, tosUrl, affiliationStatement } =
+const { title, favicon, appName, backUrl, privacyUrl, tosUrl, affiliationStatement } =
   Astro.props;
 ---
 
 <Layout title={title} noFooter>
   <link slot="favicon" rel="icon" type="image/png" href={favicon} />
 
-  <slot />
-
-  <section
-    class="mt-10 flex w-full max-w-xl flex-col gap-3"
-    aria-labelledby="more-info-heading"
-  >
-    <h2
-      id="more-info-heading"
-      class="text-center text-lg font-bold sm:text-left"
-    >
-      More Information
-    </h2>
-    <div class="text-sm text-gray-600">
-      To learn how "<b>{appName}</b>" uses your data, check out the <a
-        href={privacyUrl}
-        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-        >app's privacy policy</a
-      >.
-    </div>
-    {
-      tosUrl && (
-        <div class="text-sm text-gray-600">
-          To review the terms governing use of this app, see the{" "}
-          <a
-            href={tosUrl}
-            class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            terms of service
-          </a>
-          .
-        </div>
-      )
-    }
-  </section>
-
   {
-    affiliationStatement && (
-      <section
-        class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
-        aria-labelledby="affiliation-heading"
-      >
-        <h2
-          id="affiliation-heading"
-          class="text-center text-lg font-bold sm:text-left"
-        >
-          Statement of Affiliation
-        </h2>
-        <p class="text-sm text-gray-600">{affiliationStatement}</p>
+    backUrl && (
+      <section class="mb-4 flex w-full max-w-xl flex-col gap-3 border-b border-gray-100 pb-6">
+        <p class="text-sm">
+          <a href={backUrl} aria-label={`Go back to ${appName}`}>
+            <span aria-hidden="true">&larr;</span> Go Back
+          </a>
+        </p>
       </section>
     )
   }
 
-  <section
-    class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
-    aria-labelledby="about-heading"
-  >
-    <h2 id="about-heading" class="text-center text-lg font-bold sm:text-left">
-      About Daniel Haven, the developer
-    </h2>
-    <p class="text-sm text-gray-600">
-      {appName} is currently being built and maintained by one person.
-    </p>
-    <p class="text-center text-2xl" aria-hidden="true">👋🏻</p>
-    <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm">
-      Find me on:
-      <a
-        href="https://github.com/danielh-official"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
-      <span class="text-gray-300" aria-hidden="true">•</span>
-      <a
-        href="https://x.com/danielhaven0"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        X (Twitter)
-      </a>
-      <span class="text-gray-300" aria-hidden="true">•</span>
-      <a href="/" target="_blank" rel="noopener noreferrer">My Website</a>
-    </div>
-  </section>
+  <slot />
+
+  {
+    !backUrl && (
+      <>
+        <section
+          class="mt-10 flex w-full max-w-xl flex-col gap-3"
+          aria-labelledby="more-info-heading"
+        >
+          <h2
+            id="more-info-heading"
+            class="text-center text-lg font-bold sm:text-left"
+          >
+            More Information
+          </h2>
+          <div class="text-sm text-gray-600">
+            To learn how "<b>{appName}</b>" uses your data, check out the{" "}
+            <a
+              href={privacyUrl}
+              class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              app's privacy policy
+            </a>
+            .
+          </div>
+          {tosUrl && (
+            <div class="text-sm text-gray-600">
+              To review the terms governing use of this app, see the{" "}
+              <a
+                href={tosUrl}
+                class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                terms of service
+              </a>
+              .
+            </div>
+          )}
+        </section>
+
+        {affiliationStatement && (
+          <section
+            class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
+            aria-labelledby="affiliation-heading"
+          >
+            <h2
+              id="affiliation-heading"
+              class="text-center text-lg font-bold sm:text-left"
+            >
+              Statement of Affiliation
+            </h2>
+            <p class="text-sm text-gray-600">{affiliationStatement}</p>
+          </section>
+        )}
+
+        <section
+          class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
+          aria-labelledby="about-heading"
+        >
+          <h2
+            id="about-heading"
+            class="text-center text-lg font-bold sm:text-left"
+          >
+            About Daniel Haven, the developer
+          </h2>
+          <p class="text-sm text-gray-600">
+            {appName} is currently being built and maintained by one person.
+          </p>
+          <p class="text-center text-2xl" aria-hidden="true">
+            👋🏻
+          </p>
+          <div
+            class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm"
+          >
+            Find me on:
+            <a
+              href="https://github.com/danielh-official"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <span class="text-gray-300" aria-hidden="true">•</span>
+            <a
+              href="https://x.com/danielhaven0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X (Twitter)
+            </a>
+            <span class="text-gray-300" aria-hidden="true">•</span>
+            <a href="/" target="_blank" rel="noopener noreferrer">My Website</a>
+          </div>
+        </section>
+      </>
+    )
+  }
 </Layout>
