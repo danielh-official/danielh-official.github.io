@@ -1,23 +1,20 @@
 ---
-import Layout from "@/layouts/MainLayout.astro";
+import ProductLayout from "@/layouts/ProductLayout.astro";
 import { Image } from "astro:assets";
 import ContentView from "@/assets/things-tag-manager/ContentView.png";
 ---
 
-<Layout
+<ProductLayout
   title="Things Tag Manager: Free and Open Source Companion App for Things 3 (Cultured Code)"
-  noFooter
+  favicon="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+  appName="Things Tag Manager"
+  privacyUrl="/things-tag-manager/privacy"
+  tosUrl="/things-tag-manager/terms-of-service"
+  affiliationStatement="Things Tag Manager is an independent application and is not affiliated with Cultured Code or Things 3."
 >
-  <link
-    slot="favicon"
-    rel="icon"
-    type="image/png"
-    href="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
-  />
-
   <section
     class="flex w-full max-w-xl flex-col items-center gap-6 text-center"
-    aria-labelledby="wugu-heading"
+    aria-labelledby="ttm-heading"
   >
     <div class="flex flex-col items-center gap-4">
       <Image
@@ -29,7 +26,7 @@ import ContentView from "@/assets/things-tag-manager/ContentView.png";
         height="128"
       />
       <div class="space-y-2">
-        <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">
+        <h1 id="ttm-heading" class="m-0 text-2xl font-bold tracking-tight">
           Things Tag Manager
         </h1>
         <p class="m-0 text-sm text-gray-600">
@@ -105,80 +102,4 @@ import ContentView from "@/assets/things-tag-manager/ContentView.png";
       </li>
     </ul>
   </section>
-
-  <section
-    class="mt-10 flex w-full max-w-xl flex-col gap-3"
-    aria-labelledby="more-info-heading"
-  >
-    <h2
-      id="more-info-heading"
-      class="text-center text-lg font-bold sm:text-left"
-    >
-      More Information
-    </h2>
-    <div class="text-sm text-gray-600">
-      To learn how "<b>Things Tag Manager</b>" uses your data, check out the <a
-        href="/things-tag-manager/privacy"
-        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-        >app's privacy policy</a
-      >.
-    </div>
-    <div class="text-sm text-gray-600">
-      To review the terms governing use of this app, see the <a
-        href="/things-tag-manager/terms-of-service"
-        class="text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-        >terms of service</a
-      >.
-    </div>
-  </section>
-
-  <!-- Statement of affiliation -->
-  <section
-    class="mt-10 flex w-full max-w-xl flex-col gap-3 border-t border-gray-100 pt-6"
-    aria-labelledby="affiliation-heading"
-  >
-    <h2
-      id="affiliation-heading"
-      class="text-center text-lg font-bold sm:text-left"
-    >
-      Statement of Affiliation
-    </h2>
-    <p class="text-sm text-gray-600">
-      Things Tag Manager is an independent application and is not affiliated
-      with Cultured Code or Things 3.
-    </p>
-  </section>
-
-  <section
-    class="mt-10 flex w-full max-w-xl flex-col items-center gap-3 border-t border-gray-100 pt-6"
-    aria-labelledby="about-heading"
-  >
-    <h2 id="about-heading" class="text-center text-lg font-bold sm:text-left">
-      About Daniel Haven, the developer
-    </h2>
-    <p class="text-sm text-gray-600">
-      Things Tag Manager is currently being built and maintained by one person.
-    </p>
-    <p class="text-center text-2xl" aria-hidden="true">👋🏻</p>
-    <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm">
-      Find me on:
-      <a
-        href="https://github.com/danielh-official"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
-      <span class="text-gray-300" aria-hidden="true">•</span>
-      <a
-        href="https://x.com/danielhaven0"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        X (Twitter)
-      </a>
-      <span class="text-gray-300" aria-hidden="true">•</span>
-      <a href="/" target="_blank" rel="noopener noreferrer"> My Website </a>
-    </div>
-  </section>
-</Layout>
+</ProductLayout>
