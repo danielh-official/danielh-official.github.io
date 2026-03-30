@@ -25,5 +25,5 @@ pnpm-debug.log*
 
 # lock files
 package-lock.json
-bun.lock
 yarn.lock
+bun.lock
