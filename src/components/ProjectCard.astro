@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  icon?: any;
+  name: string;
+  url: string;
+  status: string;
+  lastUpdated: Date;
+  platforms: Array<
+    "macOS" | "iOS" | "Windows" | "Web" | "Chromium" | "Firefox"
+  >;
+  distributionChannels?: Array<
+    "App Store" | "Web App" | "Direct Download" | "Chrome Web Store"
+  >;
+  pricing: "Free" | "Paid";
+  openSource: boolean;
+}
+
+const {
+  icon,
+  name,
+  url,
+  status,
+  lastUpdated,
+  distributionChannels: distributionChannel,
+  platforms,
+  pricing,
+  openSource,
+} = Astro.props;
+
+function getRelativeTimeString(date: Date | number, lang = "en"): string {
+  const deltaSeconds = Math.round(
+    (new Date(date).getTime() - Date.now()) / 1000,
+  );
+  const cutoffs = [
+    60,
+    3600,
+    86400,
+    86400 * 7,
+    86400 * 30,
+    86400 * 365,
+    Infinity,
+  ];
+  const units: Intl.RelativeTimeFormatUnit[] = [
+    "second",
+    "minute",
+    "hour",
+    "day",
+    "week",
+    "month",
+    "year",
+  ];
+  const unitIndex = cutoffs.findIndex(
+    (cutoff) => cutoff > Math.abs(deltaSeconds),
+  );
+  const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
+  const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
+  return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
+}
+
+const platformsLabel = platforms?.length > 1 ? "Platforms" : "Platform";
+---
+
+<article
+  class="project-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+>
+  {
+    icon && (
+      <div>
+        <Image
+          src={icon}
+          alt={name}
+          width={50}
+          height={50}
+          class="rounded-2xl shadow-sm"
+        />
+      </div>
+    )
+  }
+  <div class="flex items-start justify-between gap-2">
+    <h2 class="m-0 text-base leading-snug font-semibold">{name}</h2>
+    <span
+      class="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500"
+    >
+      {status}
+    </span>
+  </div>
+
+  <p class="m-0 grow text-sm text-gray-600"><slot /></p>
+
+  <a
+    href={url}
+    class="mt-auto inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+    aria-label={`View ${name}`}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View project
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+  </a>
+
+  <div class="flex flex-col gap-1.5">
+    <div class="text-sm text-gray-400">Other Details</div>
+    <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
+      Pricing: {pricing}
+    </span>
+    {
+      openSource && (
+        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
+          Open Source
+        </span>
+      )
+    }
+    {
+      !openSource && (
+        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
+          Closed Source
+        </span>
+      )
+    }
+    {
+      platforms && (
+        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
+          {platformsLabel}: {platforms.join(", ")}
+        </span>
+      )
+    }
+    {
+      distributionChannel && (
+        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
+          Distribution: {distributionChannel.join(", ")}
+        </span>
+      )
+    }
+  </div>
+
+  <div class="text-sm text-gray-400">
+    Status Last Updated: {getRelativeTimeString(lastUpdated)}
+  </div>
+</article>
