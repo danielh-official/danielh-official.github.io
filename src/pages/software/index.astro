@@ -1,129 +1,8 @@
 ---
 import Layout from "@/layouts/MainLayout.astro";
 import wakeupgetupIcon from "@/assets/wakeupgetup/icon.png";
-import { Image } from "astro:assets";
 import redditQuickBlockIcon from "@/assets/reddit-quick-block/icon.png";
-
-interface Project {
-  icon?: any;
-  name: string;
-  description: string;
-  category: string;
-  url: string;
-  status: string;
-  lastUpdated: Date;
-}
-
-const projects: Project[] = [
-  {
-    icon: "https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png",
-    name: "Things Tag Manager",
-    description:
-      "A companion app for Things 3 (Cultured Code) to make managing tags easier.",
-    category: "Mac Desktop App",
-    url: "/things-tag-manager",
-    status: "TestFlight",
-    lastUpdated: new Date(2026, 2, 29, 12),
-  },
-  {
-    icon: wakeupgetupIcon,
-    name: "Wake Up, Get Up",
-    description:
-      "Track the time between waking up and actually getting out of bed.",
-    category: "iPhone App",
-    url: "/wakeupgetup",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-  {
-    icon: "https://danielhaven.com/ynabapidocs/_app/immutable/assets/favicon.Cr2iNLzt.png",
-    name: "YNAB API Docs",
-    description:
-      "A scraper and web app for YNAB's API documentation that adds statistical insights for libraries and integrations.",
-    category: "YNAB-Related Web App",
-    url: "https://danielhaven.com/ynabapidocs",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-  {
-    icon: "https://raw.githubusercontent.com/danielh-official/billsforynab/refs/heads/main/src/lib/assets/favicon.png",
-    name: "Bills (For YNAB)",
-    description: "A web app for tracking bills (recurring expenses) with YNAB.",
-    category: "YNAB-Related Web App",
-    url: "https://billsforynab.com",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-  {
-    icon: "https://raw.githubusercontent.com/danielh-official/streaksforynab/refs/heads/main/src/lib/assets/icons/favicon.png",
-    name: "Streaks (For YNAB)",
-    description: "A web app for tracking spending habits with YNAB.",
-    category: "YNAB-Related Web App",
-    url: "https://danielhaven.com/streaksforynab/",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-  {
-    icon: redditQuickBlockIcon,
-    name: "1-click block redditors",
-    description:
-      "Block a Redditor the exact moment you see his or her hot take.",
-    category: "Chrome Extension",
-    url: "https://chromewebstore.google.com/detail/1-click-block-redditors/gnafilgmiflpdmgdoondecomfikbanda?hl=en",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-  {
-    icon: "https://raw.githubusercontent.com/danielh-official/rumble-thumbnails-hider/refs/heads/main/public/icon/128.png",
-    name: "Hide Rumble Thumbnails",
-    description: "Block distracting, clickbaity thumbnails on Rumble.",
-    category: "Chrome Extension",
-    url: "https://chromewebstore.google.com/detail/hide-rumble-thumbnails/dfmdfkeldajmnkngihdambfpmjfhhbmc",
-    status: "Actively Maintained",
-    lastUpdated: new Date(2026, 2, 21, 12),
-  },
-];
-
-const categories = ["All", ...new Set(projects.map((p) => p.category))];
-
-const categoryCounts: Record<string, number> = { All: projects.length };
-for (const p of projects) {
-  categoryCounts[p.category] = (categoryCounts[p.category] ?? 0) + 1;
-}
-
-function getRelativeTimeString(
-  date: Date | number,
-  lang = navigator.language,
-): string {
-  const deltaSeconds = Math.round(
-    (new Date(date).getTime() - Date.now()) / 1000,
-  );
-  const cutoffs = [
-    60,
-    3600,
-    86400,
-    86400 * 7,
-    86400 * 30,
-    86400 * 365,
-    Infinity,
-  ];
-  const units: Intl.RelativeTimeFormatUnit[] = [
-    "second",
-    "minute",
-    "hour",
-    "day",
-    "week",
-    "month",
-    "year",
-  ];
-  const unitIndex = cutoffs.findIndex(
-    (cutoff) => cutoff > Math.abs(deltaSeconds),
-  );
-  const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
-
-  const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
-  return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
-}
+import ProjectCard from "@/components/ProjectCard.astro";
 ---
 
 <Layout title="Software — Daniel Haven">
@@ -136,98 +15,110 @@ function getRelativeTimeString(
     <p class="m-0 text-sm text-gray-500">Things I've built or am building.</p>
   </header>
 
-  <!-- Category filter: hidden until JS runs -->
-  <div
-    id="category-filter"
-    class="hidden flex-wrap justify-center gap-2"
-    role="group"
-    aria-label="Filter by category"
-  >
-    {
-      categories.map((cat) => (
-        <button
-          data-filter={cat}
-          class:list={[
-            "filter-btn cursor-pointer rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600",
-            cat === "All"
-              ? "border-blue-600 bg-blue-600 text-white"
-              : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50",
-          ]}
-          aria-pressed={cat === "All" ? "true" : "false"}
-        >
-          {cat} ({categoryCounts[cat]})
-        </button>
-      ))
-    }
-  </div>
-
   <!-- Grid -->
   <div
     id="project-grid"
     class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
   >
-    {
-      projects.map((project) => (
-        <article
-          data-category={project.category}
-          class="project-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
-        >
-          {project.icon && (
-            <div>
-              <Image
-                src={project.icon}
-                alt={project.name}
-                width={50}
-                height={50}
-                class="rounded-2xl shadow-sm"
-              />
-            </div>
-          )}
-          <div class="flex items-start justify-between gap-2">
-            <h2 class="m-0 text-base leading-snug font-semibold">
-              {project.name}
-            </h2>
-            {
-              <span class="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500">
-                {project.status}
-              </span>
-            }
-          </div>
-          <div class="text-sm text-gray-400">{project.category}</div>
+    <ProjectCard
+      icon="https://raw.githubusercontent.com/danielh-official/ThingsTagManager/refs/heads/main/AppIcon-iOS-Default-128x128%401x.png"
+      name="Things Tag Manager"
+      url="/things-tag-manager"
+      status="TestFlight"
+      lastUpdated={new Date(2026, 2, 29, 12)}
+      distributionChannels={["App Store"]}
+      pricing="Free"
+      openSource={true}
+      platforms={["macOS"]}
+    >
+      A companion app for <a
+        href="https://culturedcode.com/things/"
+        target="_blank"
+        rel="noopener noreferrer">Things 3 (Cultured Code)</a
+      > to make managing tags easier.
+    </ProjectCard>
 
-          <p class="m-0 grow text-sm text-gray-600">{project.description}</p>
+    <ProjectCard
+      icon={wakeupgetupIcon}
+      name="Wake Up, Get Up"
+      url="/wakeupgetup"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      distributionChannels={["App Store"]}
+      pricing="Free"
+      openSource={false}
+      platforms={["iOS"]}
+    >
+      Track the time between waking up and actually getting out of bed.
+    </ProjectCard>
 
-          <a
-            href={project.url}
-            class="mt-auto inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            aria-label={`View ${project.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View project
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
+    <ProjectCard
+      icon="https://danielhaven.com/ynabapidocs/_app/immutable/assets/favicon.Cr2iNLzt.png"
+      name="YNAB API Docs"
+      url="https://danielhaven.com/ynabapidocs"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      pricing="Free"
+      openSource={false}
+      platforms={["Web"]}
+    >
+      A scraper and web app for YNAB's API documentation that adds statistical
+      insights for libraries and integrations.
+    </ProjectCard>
 
-          <div class="text-sm text-gray-400">
-            Status Last Updated: {getRelativeTimeString(project.lastUpdated)}
-          </div>
-        </article>
-      ))
-    }
+    <ProjectCard
+      icon="https://raw.githubusercontent.com/danielh-official/billsforynab/refs/heads/main/src/lib/assets/favicon.png"
+      name="Bills (For YNAB)"
+      url="https://billsforynab.com"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      pricing="Free"
+      openSource={false}
+      platforms={["Web"]}
+    >
+      A web app for tracking bills (recurring expenses) with YNAB.
+    </ProjectCard>
+
+    <ProjectCard
+      icon="https://raw.githubusercontent.com/danielh-official/streaksforynab/refs/heads/main/src/lib/assets/icons/favicon.png"
+      name="Streaks (For YNAB)"
+      url="https://danielhaven.com/streaksforynab/"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      pricing="Free"
+      openSource={false}
+      platforms={["Web"]}
+    >
+      A web app for tracking spending habits with YNAB.
+    </ProjectCard>
+
+    <ProjectCard
+      icon={redditQuickBlockIcon}
+      name="1-click block redditors"
+      url="https://chromewebstore.google.com/detail/1-click-block-redditors/gnafilgmiflpdmgdoondecomfikbanda?hl=en"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      distributionChannels={["Chrome Web Store"]}
+      pricing="Free"
+      openSource={false}
+      platforms={["Chromium"]}
+    >
+      Block a Redditor the exact moment you see his or her hot take.
+    </ProjectCard>
+
+    <ProjectCard
+      icon="https://raw.githubusercontent.com/danielh-official/rumble-thumbnails-hider/refs/heads/main/public/icon/128.png"
+      name="Hide Rumble Thumbnails"
+      url="https://chromewebstore.google.com/detail/hide-rumble-thumbnails/dfmdfkeldajmnkngihdambfpmjfhhbmc"
+      status="Actively Maintained"
+      lastUpdated={new Date(2026, 2, 21, 12)}
+      distributionChannels={["Chrome Web Store"]}
+      pricing="Free"
+      openSource={false}
+      platforms={["Chromium"]}
+    >
+      Block distracting, clickbaity thumbnails on Rumble.
+    </ProjectCard>
   </div>
 
   <!-- Empty state -->
@@ -235,40 +126,3 @@ function getRelativeTimeString(
     No projects in this category yet.
   </p>
 </Layout>
-
-<script>
-  const filterEl = document.getElementById("category-filter")!;
-  filterEl.classList.remove("hidden");
-  filterEl.classList.add("flex");
-
-  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
-  const cards = document.querySelectorAll<HTMLElement>(".project-card");
-  const emptyState = document.getElementById("empty-state")!;
-
-  function applyFilter(selected: string) {
-    let visible = 0;
-
-    cards.forEach((card) => {
-      const match = selected === "All" || card.dataset.category === selected;
-      card.hidden = !match;
-      if (match) visible++;
-    });
-
-    emptyState.classList.toggle("hidden", visible > 0);
-
-    buttons.forEach((btn) => {
-      const active = btn.dataset.filter === selected;
-      btn.classList.toggle("bg-blue-600", active);
-      btn.classList.toggle("text-white", active);
-      btn.classList.toggle("border-blue-600", active);
-      btn.classList.toggle("bg-white", !active);
-      btn.classList.toggle("text-gray-600", !active);
-      btn.classList.toggle("border-gray-200", !active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-  }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => applyFilter(btn.dataset.filter!));
-  });
-</script>
