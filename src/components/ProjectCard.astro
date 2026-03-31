@@ -5,8 +5,6 @@ interface Props {
   icon?: any;
   name: string;
   url: string;
-  status: string;
-  lastUpdated: Date;
   platforms: Array<
     "macOS" | "iOS" | "Windows" | "Web" | "Chromium" | "Firefox"
   >;
@@ -21,8 +19,6 @@ const {
   icon,
   name,
   url,
-  status,
-  lastUpdated,
   distributionChannels: distributionChannel,
   platforms,
   pricing,
@@ -80,11 +76,6 @@ const platformsLabel = platforms?.length > 1 ? "Platforms" : "Platform";
   }
   <div class="flex items-start justify-between gap-2">
     <h2 class="m-0 text-base leading-snug font-semibold">{name}</h2>
-    <span
-      class="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500"
-    >
-      {status}
-    </span>
   </div>
 
   <p class="m-0 grow text-sm text-gray-600"><slot /></p>
@@ -142,9 +133,5 @@ const platformsLabel = platforms?.length > 1 ? "Platforms" : "Platform";
         )
       }
     </dl>
-  </div>
-
-  <div class="text-sm text-gray-400">
-    Status Last Updated: {getRelativeTimeString(lastUpdated)}
   </div>
 </article>
