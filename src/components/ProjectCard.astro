@@ -115,38 +115,33 @@ const platformsLabel = platforms?.length > 1 ? "Platforms" : "Platform";
   </a>
 
   <div class="flex flex-col gap-1.5">
-    <div class="text-sm text-gray-400">Other Details</div>
-    <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
-      Pricing: {pricing}
-    </span>
-    {
-      openSource && (
-        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
-          Open Source
-        </span>
-      )
-    }
-    {
-      !openSource && (
-        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
-          Closed Source
-        </span>
-      )
-    }
-    {
-      platforms && (
-        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
-          {platformsLabel}: {platforms.join(", ")}
-        </span>
-      )
-    }
-    {
-      distributionChannel && (
-        <span class="px-2 py-0.5 text-xs font-medium text-gray-500">
-          Distribution: {distributionChannel.join(", ")}
-        </span>
-      )
-    }
+    <h3 class="m-0 text-sm text-gray-400">Other Details</h3>
+    <dl class="flex flex-col gap-1.5">
+      <div class="flex gap-1 px-2 py-0.5 text-xs font-medium text-gray-500">
+        <dt>Pricing:</dt>
+        <dd>{pricing}</dd>
+      </div>
+      <div class="flex gap-1 px-2 py-0.5 text-xs font-medium text-gray-500">
+        <dt>Source:</dt>
+        <dd>{openSource ? "Open Source" : "Closed Source"}</dd>
+      </div>
+      {
+        platforms && (
+          <div class="flex gap-1 px-2 py-0.5 text-xs font-medium text-gray-500">
+            <dt>{platformsLabel}:</dt>
+            <dd>{platforms.join(", ")}</dd>
+          </div>
+        )
+      }
+      {
+        distributionChannel && (
+          <div class="flex gap-1 px-2 py-0.5 text-xs font-medium text-gray-500">
+            <dt>Distribution:</dt>
+            <dd>{distributionChannel.join(", ")}</dd>
+          </div>
+        )
+      }
+    </dl>
   </div>
 
   <div class="text-sm text-gray-400">

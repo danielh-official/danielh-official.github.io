@@ -6,18 +6,20 @@ import ProjectCard from "@/components/ProjectCard.astro";
 ---
 
 <Layout title="Software — Daniel Haven">
-  <div>
+  <nav aria-label="Breadcrumb">
     <a href="/">&larr; Return to Home Page</a>
-  </div>
+  </nav>
 
   <header class="flex flex-col items-center gap-2 text-center">
-    <h1 class="m-0 text-2xl font-bold tracking-tight">Software</h1>
+    <h1 id="software-heading" class="m-0 text-2xl font-bold tracking-tight">Software</h1>
     <p class="m-0 text-sm text-gray-500">Things I've built or am building.</p>
   </header>
 
   <!-- Grid -->
   <div
     id="project-grid"
+    role="region"
+    aria-labelledby="software-heading"
     class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
   >
     <ProjectCard
