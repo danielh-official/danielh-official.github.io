@@ -24,7 +24,7 @@ import { Image } from "astro:assets";
         src={wakeupgetupIcon}
         alt="Wake Up, Get Up app icon"
         class="h-20 w-20 rounded-3xl shadow-sm"
-        loading="lazy"
+        loading="eager"
       />
       <div class="space-y-2">
         <h1 id="wugu-heading" class="m-0 text-2xl font-bold tracking-tight">
@@ -51,10 +51,13 @@ import { Image } from "astro:assets";
         rel="noopener noreferrer"
         aria-label="Download Wake Up, Get Up on the App Store (opens in new tab)"
       >
-        <img
+        <Image
           src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1773187200"
           alt="Download on the App Store"
-          style="width: 246px; height: 82px; vertical-align: middle; object-fit: contain;"
+          style="vertical-align: middle; object-fit: contain;"
+          loading="eager"
+          width={246}
+          height={82}
         />
       </a>
     </div>
