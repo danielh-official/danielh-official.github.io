@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-const { href, color, icon, alt, label, target, rel } = Astro.props;
+const { href, color, icon, label, target, rel } = Astro.props;
 ---
 
 <a
@@ -14,7 +14,7 @@ const { href, color, icon, alt, label, target, rel } = Astro.props;
   {
     icon && (
       <span style={`color: ${color};`}>
-        <Image src={icon} alt={alt} width={32} height={32} />
+        <Image src={icon} alt="" width={32} height={32} />
       </span>
     )
   }
