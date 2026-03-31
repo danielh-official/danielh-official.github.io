@@ -6,7 +6,12 @@ interface Props {
   name: string;
   url: string;
   platforms: Array<
-    "macOS" | "iOS" | "Windows" | "Web" | "Chrome Extension" | "Firefox Extension"
+    | "macOS"
+    | "iOS"
+    | "Windows"
+    | "Web"
+    | "Chrome Extension"
+    | "Firefox Extension"
   >;
   distributionChannels?: Array<
     "App Store" | "Web App" | "Direct Download" | "Chrome Web Store"
@@ -66,7 +71,7 @@ const platformsLabel = platforms?.length > 1 ? "Platforms" : "Platform";
       <div>
         <Image
           src={icon}
-          alt={'icon for ' + name}
+          alt={"icon for " + name}
           width={50}
           height={50}
           class="rounded-2xl shadow-sm"

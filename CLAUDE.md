@@ -16,6 +16,7 @@ pnpm preview        # Preview production build locally
 ```
 
 Docker (serves on port 8080):
+
 ```bash
 docker compose up --build   # Build and run
 docker compose watch        # Watch mode for auto-rebuilds
@@ -28,6 +29,7 @@ There are no tests in this project.
 **Framework:** Astro with file-based routing (`src/pages/` → URL paths). All pages are statically generated (SSG).
 
 **Key directories:**
+
 - `src/pages/` — routes. Each subdirectory maps to a product (e.g., `/wake-up-get-up/`, `/things-tag-manager/`)
 - `src/layouts/MainLayout.astro` — shared layout wrapping all pages (header, nav, footer)
 - `src/components/` — `HomeLink.astro` (styled link buttons on homepage) and `ScreenshotFrame.astro` (product screenshot wrapper)
