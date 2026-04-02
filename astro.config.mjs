@@ -26,5 +26,6 @@ export default defineConfig({
     "/thingstagmanager": "/things-tag-manager",
     "/wakeupgetup": "/wake-up-get-up",
     "/wakeupgetup/privacy": "/wake-up-get-up/privacy",
+    "/software": "/software-dev-stuff",
   },
 });

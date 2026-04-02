@@ -5,23 +5,24 @@ import redditQuickBlockIcon from "@/assets/reddit-quick-block/icon.png";
 import ProjectCard from "@/components/ProjectCard.astro";
 ---
 
-<Layout title="Software — Daniel Haven">
+<Layout title="Software Dev Stuff — Daniel Haven">
   <nav aria-label="Breadcrumb">
     <a href="/">&larr; Return to Home Page</a>
   </nav>
 
   <header class="flex flex-col items-center gap-2 text-center">
     <h1 id="software-heading" class="m-0 text-2xl font-bold tracking-tight">
-      Software
+      Things I've built or am building
     </h1>
-    <p class="m-0 text-sm text-gray-500">Things I've built or am building.</p>
   </header>
+
+  <h2 class="text-lg font-semibold">Apps</h2>
 
   <!-- Grid -->
   <div
-    id="project-grid"
+    id="app-project-grid"
     role="region"
-    aria-labelledby="software-heading"
+    aria-labelledby="software-heading-apps"
     class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
   >
     <ProjectCard
@@ -41,17 +42,6 @@ import ProjectCard from "@/components/ProjectCard.astro";
     </ProjectCard>
 
     <ProjectCard
-      icon="https://raw.githubusercontent.com/danielh-official/billsforynab/refs/heads/main/src/lib/assets/favicon.png"
-      name="Bills (For YNAB)"
-      url="https://billsforynab.com"
-      pricing="Free"
-      openSource={true}
-      platforms={["Web"]}
-    >
-      A web app for tracking bills (recurring expenses) with YNAB.
-    </ProjectCard>
-
-    <ProjectCard
       icon={wakeupgetupIcon}
       name="Wake Up, Get Up"
       url="/wakeupgetup"
@@ -61,6 +51,26 @@ import ProjectCard from "@/components/ProjectCard.astro";
       platforms={["iOS"]}
     >
       Track the time between waking up and actually getting out of bed.
+    </ProjectCard>
+  </div>
+
+  <h2 class="text-lg font-semibold">Websites</h2>
+
+  <div
+    id="website-project-grid"
+    role="region"
+    aria-labelledby="software-heading-websites"
+    class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+  >
+    <ProjectCard
+      icon="https://raw.githubusercontent.com/danielh-official/billsforynab/refs/heads/main/src/lib/assets/favicon.png"
+      name="Bills (For YNAB)"
+      url="https://billsforynab.com"
+      pricing="Free"
+      openSource={true}
+      platforms={["Web"]}
+    >
+      A web app for tracking bills (recurring expenses) with YNAB.
     </ProjectCard>
 
     <ProjectCard
@@ -85,7 +95,16 @@ import ProjectCard from "@/components/ProjectCard.astro";
     >
       A web app for tracking spending habits with YNAB.
     </ProjectCard>
+  </div>
 
+  <h2 class="text-lg font-semibold">Chrome Extensions</h2>
+
+  <div
+    id="chrome-extension-project-grid"
+    role="region"
+    aria-labelledby="software-heading-chrome-extensions"
+    class="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+  >
     <ProjectCard
       icon={redditQuickBlockIcon}
       name="1-click block redditors"
@@ -95,7 +114,14 @@ import ProjectCard from "@/components/ProjectCard.astro";
       openSource={false}
       platforms={["Chrome Extension"]}
     >
-      Block a Redditor the exact moment you see his or her hot take.
+      <div>Block a Redditor the exact moment you see his or her hot take.</div>
+
+      <div>
+        <img
+          alt="Chrome Web Store Users - 1-click block redditors"
+          src="https://img.shields.io/chrome-web-store/users/gnafilgmiflpdmgdoondecomfikbanda"
+        />
+      </div>
     </ProjectCard>
 
     <ProjectCard
@@ -107,7 +133,33 @@ import ProjectCard from "@/components/ProjectCard.astro";
       openSource={true}
       platforms={["Chrome Extension"]}
     >
-      Block distracting, clickbaity thumbnails on Rumble.
+      <div>Block distracting, clickbaity thumbnails on Rumble.</div>
+
+      <div>
+        <img
+          alt="Chrome Web Store Users - Hide Rumble Thumbnails"
+          src="https://img.shields.io/chrome-web-store/users/dfmdfkeldajmnkngihdambfpmjfhhbmc"
+        />
+      </div>
+    </ProjectCard>
+
+    <ProjectCard
+      icon="https://lh3.googleusercontent.com/DxMNeVY4efYbHgzRV1nKBOM5xdOD2DgkU7C8XPy6mmicqMahbmaqTlq-OFtuxeVf-XTF6pp8bJZ5514lbZP4K7xDrA=s60"
+      name="(Unofficial) Save to Play"
+      url="https://chromewebstore.google.com/detail/unofficial-save-to-play/gdkaciebpaiikdhopaddmnpeoiedmfdj"
+      distributionChannels={["Chrome Web Store"]}
+      pricing="Free"
+      openSource={true}
+      platforms={["Chrome Extension"]}
+    >
+      <div>Save YouTube videos to Play app.</div>
+
+      <div>
+        <img
+          alt="Chrome Web Store Users - (Unofficial) Save to Play"
+          src="https://img.shields.io/chrome-web-store/users/gdkaciebpaiikdhopaddmnpeoiedmfdj"
+        />
+      </div>
     </ProjectCard>
   </div>
 
