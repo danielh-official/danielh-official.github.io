@@ -1,8 +1,15 @@
 import eslintPluginAstro from "eslint-plugin-astro";
+import tsParser from "@typescript-eslint/parser";
 export default [
   // add more generic rule sets here, such as:
   // js.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
+  {
+    files: ["**/*.ts"],
+    languageOptions: {
+      parser: tsParser,
+    },
+  },
   {
     rules: {
       // override/add rules settings here, such as:
